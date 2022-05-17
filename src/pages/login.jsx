@@ -1,6 +1,7 @@
 import React from "react";
 import { Formik } from "formik";
 
+
 const Formulario = () => {
 
 	return (    
@@ -27,5 +28,5 @@ const Formulario = () => {
 		</div>
 	);
 }
- 
+
 export default Formulario;
