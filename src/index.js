@@ -4,11 +4,11 @@ import "./index.css"
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 
 //-------- importamos las vistas -------- 👇
-import Home from './components/home';
-import Login from './components/login';
-import Chef from './components/chef';
-import Waiter from './components/waiter';
-import Admin  from './components/admin';
+import Home from './pages/home';
+import Login from './pages/login';
+import Chef from './pages/chef';
+import Waiter from './pages/waiter';
+import Admin  from './pages/admin';
 
 const root = ReactDOM.createRoot(document.getElementById('root'))
 root.render(
