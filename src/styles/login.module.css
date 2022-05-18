@@ -1,21 +1,8 @@
-@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;600display=swap');
-
-* {
-	padding: 0px;
-	margin: 0;
-	box-sizing: border-box;
-}
-
-body {
-	background-image: url('../public/bg.jpg');
-    background-size: cover;
-	font-family: 'Raleway', sans-serif;
-}
-.bienvenida{
-    color: #e2e2e2;
-}
-
+/* body{
+    background-image: url(../../public/bg.jpg);
+} */
 .contenedor {
+    background-image: url('../../public/bg.jpg');
 	min-height: 100vh;
 	display: flex;
 	align-items: flex-start;
@@ -45,7 +32,7 @@ body {
 
 .formulario input,
 .formulario textarea {
-	font-family: 'Raleway', sans-serif;
+	/* font-family: 'Raleway', sans-serif; */
 	width: 100%;
 	border-radius: 5px;
 	border: 2px solid #e2e2e2;
@@ -70,7 +57,7 @@ body {
 	display: block;
 	background: #FE8D06;
 	font-weight: 600;
-	font-family: 'Raleway', sans-serif;
+	/* font-family: 'Raleway', sans-serif; */
 	border: none;
 	cursor: pointer;
 	width: 100%;

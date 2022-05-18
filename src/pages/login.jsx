@@ -1,18 +1,19 @@
 import React from "react";
 import { Formik } from "formik";
+import Styles from '../styles/login.module.css'
 
 
 const Formulario = () => {
 
 	return (    
-		<div className='contenedor'>
+		<div className={Styles.contenedor}>
       <Formik
         onSubmit={() => {
           console.log('Formulario enviado');
         }}
       >
         {(props) => (
-          <form className="formulario" onSubmit={props.handleSubmit}>
+          <form className={Styles.formulario} onSubmit={props.handleSubmit}>
             <div>
               <label htmlFor="email">Correo</label>
               <input type="email" id="email" name="email" placeholder="correo@burger.com"/>
