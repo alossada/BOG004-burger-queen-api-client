@@ -20,7 +20,7 @@ const routes = () => {
             <Route path='*' element={<Navigate to={"/"} />}></Route>
         </Routes>
     </BrowserRouter>
-    );
+    ); 
 }
 
 export default routes;
