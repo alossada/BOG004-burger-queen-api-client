@@ -2,11 +2,14 @@ import { Formik, Form, Field } from "formik"
 import Styles from '../styles/login.module.css'
 import image from '../assets/logo.png'
 import  axios  from 'axios'
+import { useNavigate } from "react-router"
 
 const apiUrl = 'http://localhost:8080/'
 
 
-const Formulario = () => {
+const Formulario = (props) => {
+  // props.func('cualquier cosa')
+  const navigate = useNavigate();
 
   return (
     <>
@@ -41,8 +44,14 @@ const Formulario = () => {
             let data = { email: valores.email, password: valores.password};
             let url = apiUrl + 'login'
             axios.post(url, data)
-              .then(function (response) {
-                console.log('Respuesta positiva:', response);              
+              .then((response) => {
+                if (response.data.user.id === 1) {
+                  navigate('admin');            
+                } else if (response.data.user.id === 2) {
+                  navigate('waiter');
+                } else if (response.data.user.id === 3) {
+                  navigate('chef');
+                }                
               })
               .catch(function (error) {
                 console.log('Respuesta negativa:', error)
