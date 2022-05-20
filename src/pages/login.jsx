@@ -1,45 +1,57 @@
-// import React, { Fragment } from "react";
-import { Formik, Form, Field} from "formik";
+import { Formik, Form, Field } from "formik"
 import Styles from '../styles/login.module.css'
-import image from '../assets/logo.png' 
-import { Fragment } from "react";
+import image from '../assets/logo.png'
+import  axios  from 'axios'
+
+const apiUrl = 'http://localhost:8080/'
 
 
 const Formulario = () => {
-	return ( 
+
+  return (
     <>
       <div className={Styles.contenedor}>
-          <img src={image} alt="" />
+        <img src={image} alt="" />
         <Formik
           initialValues={{
-            email:'',
-            password:''
+            email: '',
+            password: '',
           }}
-          validate={(valores)=>{
+          validate={(valores) => {
             let errores = {}; //Array objetos para imprimir los errors
-      //-------- validación para el correo -------- 👇
-            if(!valores.email){
+            //-------- validación para el correo -------- 👇
+            if (!valores.email) {
               errores.email = 'Por favor ingresa un email'
-            }else if(!/^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/.test(valores.email)){
+            } else if (!/^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/.test(valores.email)) {
               errores.email = 'El correo es incorrecto'
             }
 
             //-------- validación para la contraseña -------- 👇
-            if(!valores.password){
+            if (!valores.password) {
               errores.password = 'Por favor ingresa tu contraseña'
-            }else if(!/^(?=.*?[a-z])(?=.*?[0-9])[A-Za-z0-9]{6,}$/.test(valores.password)){
+            } else if (!/^([0-9]){6,}$/.test(valores.password)) {
               errores.password = 'La contraseña es incorrecta'
-            }else if (valores.password.length > 6) {
+            } else if (valores.password.length > 6) {
               errores.password = 'debe contener 6 caracteres!';
             }
             return errores;
           }}
-          onSubmit={(valores, {resetForm}) => {
+          onSubmit={(valores, { resetForm }) => {
+            console.log(valores);
+            let data = { email: valores.email, password: valores.password};
+            let url = apiUrl + 'login'
+            axios.post(url, data)
+              .then(function (response) {
+                console.log('Respuesta positiva:', response);              
+              })
+              .catch(function (error) {
+                console.log('Respuesta negativa:', error)
+              })
             resetForm();
             console.log('Formulario enviado');
           }}
         >
-          {({values, errors, touched}) => (
+          {({ values, errors, touched }) => (
             <Form className={Styles.formulario}>
               <div>
                 <label htmlFor="email" className={Styles.formulario_label}>Correo</label>
@@ -48,6 +60,7 @@ const Formulario = () => {
                   id="email"
                   name="email"
                   placeholder="usuario@bq.com"
+                  // value={values.email}
                 />
                 {/* <ErrorMessage name="email" component={()=>{}} /> */}
                 {touched.email && errors.email && <div className={Styles.error}>{errors.email}</div>}
@@ -59,6 +72,7 @@ const Formulario = () => {
                   id="password"
                   name="password"
                   placeholder="******"
+                  // value={values.placeholder}
                 />
                 {touched.password && errors.password && <div className={Styles.error}>{errors.password}</div>}
               </div>
@@ -71,7 +85,7 @@ const Formulario = () => {
         </Formik>
       </div>
     </>
-	);
+  );
 }
 
 export default Formulario;
