@@ -1,15 +1,16 @@
 import { Formik, Form, Field } from "formik"
 import Styles from '../styles/login.module.css'
 import image from '../assets/logo.png'
-import  axios  from 'axios'
-import { useNavigate } from "react-router"
+import { useNavigate } from "react-router-dom"
+import { login, saveUser } from "../Providers/UserPetitions"
 
-const apiUrl = 'http://localhost:8080/'
-
-
-const Formulario = (props) => {
-  // props.func('cualquier cosa')
+const LoginForm = () => {
+  
   const navigate = useNavigate();
+  //--- Funcion para cambio de ruta---//
+  const navigateTo = (role) => {
+    return navigate(`/${Object.keys(role)}`);
+  }
 
   return (
     <>
@@ -28,7 +29,6 @@ const Formulario = (props) => {
             } else if (!/^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/.test(valores.email)) {
               errores.email = 'El correo es incorrecto'
             }
-
             //-------- validación para la contraseña -------- 👇
             if (!valores.password) {
               errores.password = 'Por favor ingresa tu contraseña'
@@ -39,55 +39,50 @@ const Formulario = (props) => {
             }
             return errores;
           }}
-          onSubmit={(valores, { resetForm }) => {
-            console.log(valores);
-            let data = { email: valores.email, password: valores.password};
-            let url = apiUrl + 'login'
-            axios.post(url, data)
+          onSubmit={(valores, { resetForm }) => {            
+            let data = { email: valores.email, password: valores.password };
+            login(data)
               .then((response) => {
-                if (response.data.user.id === 1) {
-                  navigate('admin');            
-                } else if (response.data.user.id === 2) {
-                  navigate('waiter');
-                } else if (response.data.user.id === 3) {
-                  navigate('chef');
-                }                
+                saveUser(response.data);                
+                // console.log('Soy la peticion', response);
+                // console.log('Soy el string', sessionStorage);
+                const activeUser = JSON.parse(sessionStorage.user);
+                // console.log(activeUser);
+                const userRole = activeUser.user.roles;
+                // console.log('Role', userRole);
+                navigateTo(userRole);
               })
               .catch(function (error) {
                 console.log('Respuesta negativa:', error)
               })
-            resetForm();
-            console.log('Formulario enviado');
+            resetForm();            
           }}
         >
-          {({ values, errors, touched }) => (
-            <Form className={Styles.formulario}>
+          {({ errors, touched }) => (
+            <Form className={Styles.LoginForm}>
               <div>
-                <label htmlFor="email" className={Styles.formulario_label}>Correo</label>
+                <label htmlFor="email" className={Styles.LoginForm_label}>Correo</label>
                 <Field
                   type="text"
                   id="email"
                   name="email"
                   placeholder="usuario@bq.com"
-                  // value={values.email}
                 />
-                {/* <ErrorMessage name="email" component={()=>{}} /> */}
                 {touched.email && errors.email && <div className={Styles.error}>{errors.email}</div>}
               </div>
               <div>
-                <label htmlFor="password" className={Styles.formulario_label}>Contraseña</label>
+                <label htmlFor="password" className={Styles.LoginForm_label}>Contraseña</label>
                 <Field
                   type="password"
                   id="password"
                   name="password"
                   placeholder="******"
-                  // value={values.placeholder}
                 />
                 {touched.password && errors.password && <div className={Styles.error}>{errors.password}</div>}
               </div>
-              <div className={Styles.formulario_container_buttons}>
-                <button type="submit" className={Styles.formulario_container_button_ingresar}>Ingresar</button>
-                <button type="submit" className={Styles.formulario_container_button_regrersar}>Regresar</button>
+              <div className={Styles.LoginForm_container_buttons}>
+                <button type="submit" className={Styles.LoginForm_container_button_ingresar}>Ingresar</button>
+                <button type="submit" className={Styles.LoginForm_container_button_regrersar}>Regresar</button>
               </div>
             </Form>
           )}
@@ -97,4 +92,4 @@ const Formulario = (props) => {
   );
 }
 
-export default Formulario;
+export default LoginForm;
