@@ -11,7 +11,7 @@
 	margin: 0 auto;
 	
 }
-.formulario {
+.LoginForm {
 	margin: 0 auto;
 	width: 350px;
 	margin-top: 50px;
@@ -22,46 +22,46 @@
 /* img {
 	width: 120px;
 } */
-.formulario > div {
+.LoginForm > div {
 	margin-bottom: 20px;
 }
-.formulario_label {
+.LoginForm_label {
 	display: block;
 	font-weight: 600;
 	font-size: 14px;
 	margin-bottom: 5px;
 	color: #f1f1f1;
 }
-.formulario input[type=text]{
+.LoginForm input[type=text]{
 	background-color: transparent;
 	color: white;
 	border: 2px solid #FE8D06e2;
 }
-.formulario input[type=password]{
+.LoginForm input[type=password]{
 	background-color: transparent;
 	color: white;
 	border: 2px solid #FE8D06e2;
 }
-.formulario input[type=text]:focus{
+.LoginForm input[type=text]:focus{
 	background-color: transparent;
 	color: white;
 	border: 2px solid #FE8D06e2;
 }
-.formulario input[type=password]:focus{
+.LoginForm input[type=password]:focus{
 	background-color: transparent;
 	color: white;
 	border: 2px solid #FE8D06e2;
 }
-.formulario .error {
+.LoginForm .error {
 	color: #FE8D06e2;
 	font-weight: 600;
 	font-size: 12px;
 }
-.formulario_container_buttons{
+.LoginForm_container_buttons{
 	display: flex;
 	gap: 10px;
 }
-.formulario button[type="submit"] {
+.LoginForm button[type="submit"] {
 	display: block;
 	background: #FE8D06;
 	font-weight: 600;
@@ -74,7 +74,7 @@
 	font-size: 16px;
 	transition: .3s ease all;
 }
-.formulario .exito {
+.LoginForm .exito {
 	text-align: center;
 	font-size: 14px;
 	padding-top: 20px;
