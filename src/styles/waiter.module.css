@@ -1,0 +1,15 @@
+.container_waiter {
+    background-image: url('../../public/bg.jpg');
+	background-size: cover;
+	min-height: 100vh;
+}
+.container_waiter_nav{
+    padding: 20px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.container_header_logo{
+    width: 100px;
+}
