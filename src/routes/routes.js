@@ -1,7 +1,8 @@
 import { BrowserRouter, Routes, Route} from 'react-router-dom';
+
 //-------- importamos las vistas -------- :apuntando_hacia_abajo:
-import Home from '../pages/home';
-import LoginForm from '../pages/login';
+import Home from './home';
+import LoginForm from '../components/LoginForm';
 import { RouterByRoles } from './routerByRoles';
 const Rutas = () => {
     return (
