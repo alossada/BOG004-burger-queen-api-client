@@ -2,7 +2,7 @@ import React from 'react'
 import {render, screen, waitFor} from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 
-import LoginForm from './login.jsx'
+import LoginForm from '../routes/login.jsx'
 
 test('rendering and submitting a basic Formik form', async () => {
     const handleSubmit = jest.fn()
