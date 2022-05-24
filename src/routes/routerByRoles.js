@@ -1,12 +1,15 @@
 import { Routes, Route, Navigate } from 'react-router-dom';
-//-------- importamos las vistas -------- :apuntando_hacia_abajo:
-// import Home from '../pages/home';
-// import Login from '../pages/login';
-import Chef from '../pages/chef';
-import Waiter from '../pages/waiter';
-import Admin from '../pages/admin';
+
+//-------- importamos las vistas -------- 
+import Chef from './chef';
+import Waiter from './waiter';
+import Admin from './admin';
+import Order from '../components/Order';
+import OrderReady from '../components/OrderReady';
+
 // ROUTER
 export const RouterByRoles = () => {
+    
     const activeUser = JSON.parse(sessionStorage.getItem('user'));
     return (
         <>
@@ -18,15 +21,18 @@ export const RouterByRoles = () => {
                 }
                 {
                     activeUser.user.roles.waiter ? (
-                        <Route path='/waiter' element={<Waiter />} />
+                        <Route path='/waiter' element={<Waiter  />}>
+                            <Route path='/waiter/order' element={<Order/>}></Route>
+                            <Route path='/waiter/ready' element={<OrderReady/>}></Route>
+                        </Route> 
                     ) : null
                 }
                 {
                     activeUser.user.roles.chef ? (
-                        <Route path='/chef' element={<Chef />} />
+                        <Route path='/chef' element={<Chef />}/>
                     ) : null
                 }
-                <Route path='*' element={<Navigate to={"/"} />}></Route>
+                <Route path='*' element={<Navigate replace to={"/"} />}></Route>
             </Routes>
         </>
     );
