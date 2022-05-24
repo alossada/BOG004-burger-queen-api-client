@@ -1,9 +1,8 @@
 import axios from "axios";
-import { getToken } from "./UserPetitions";
+// import { getToken } from "./UserPetitions";
 const url = 'http://localhost:8080/';
 
 const products = (token) => {
-
     return axios({
         method: "GET", 
         url:url+'products', 
@@ -11,7 +10,7 @@ const products = (token) => {
             'content-type': 'application/json',
             authorization: 'Bearer ' + token,
             },
-      });
+      })
  } 
 
  export { products }
