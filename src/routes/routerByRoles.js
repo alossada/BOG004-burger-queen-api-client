@@ -1,11 +1,12 @@
 import { Routes, Route, Navigate } from 'react-router-dom';
 
 //-------- importamos las vistas -------- 
-import Chef from './chef';
-import Waiter from './waiter';
-import Admin from './admin';
-import Order from '../components/Order';
-import OrderReady from '../components/OrderReady';
+import Chef from '../pages/chef';
+import Waiter from '../pages/waiter';
+import Admin from '../pages/admin';
+import OrderReady from '../componentsWaiter/SummaryProduct';
+import Order from '../componentsWaiter/Order';
+
 
 // ROUTER
 export const RouterByRoles = () => {
