@@ -1,5 +1,5 @@
 
-const Product = (props) => {
+const Menu = (props) => {
     const onClick = () => {
         props.handleAddProduct({name: props.name, price: props.price, id: props.id, type: props.type});
     }
@@ -14,4 +14,4 @@ const Product = (props) => {
     );
 };
 
-export default Product;
+export default Menu;

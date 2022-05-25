@@ -1,6 +1,6 @@
 
 import React from 'react'
-import NavBar from '../components/Navbar.js'
+import NavBar from '../componentsWaiter/Navbar.js'
 import Style from '../styles/waiter.module.css'
 
 export default function Waiter() {
