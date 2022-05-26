@@ -4,7 +4,7 @@ import { Routes, Route, Navigate } from 'react-router-dom';
 import Chef from '../pages/chef';
 import Waiter from '../pages/waiter';
 import Admin from '../pages/admin';
-import OrderReady from '../componentsWaiter/SummaryProduct';
+import OrderReady from '../componentsWaiter/ListOrderReady';
 import Order from '../componentsWaiter/Order';
 
 
