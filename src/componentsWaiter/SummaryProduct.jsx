@@ -4,7 +4,7 @@ import { useCart } from 'react-use-cart'
 // import'../../node_modules/bootstrap/dist/css/bootstrap-grid.min.css' 
 export default function SummaryProducts() {
   const {
-    // isEmpty,
+    isEmpty,
     totalUniqueItems,
     items,
     totalItems,
@@ -25,12 +25,14 @@ export default function SummaryProducts() {
               {items.map((item,index)=>{
                 return(
                   <tr key={index}>
+                    <div className={Style.conatiner_name_price_quantity}>
                     <td>
-                      <img src={item.image} style={{width:'4rem'}} alt="" />
+                      <img src={item.image} style={{width:'5rem'}} alt="" />
                     </td>
-                    <td>{item.name}</td>
-                    <td>{item.price}</td>
-                    <td>({item.quantity})</td>
+                      <td>{item.name}</td>
+                      <td>{item.price}</td>
+                      <td>({item.quantity})</td>
+                    </div>
                     <td>
                       <button 
                         className={Style.button_rest}
@@ -41,7 +43,7 @@ export default function SummaryProducts() {
                         onClick={()=>{updateItemQuantity(item.id, item.quantity + 1)}}
                         >➕</button>
                       <button 
-                        className='btn btn-dark ms-1'
+                        className={Style.button_remove}
                         onClick={()=>{removeItem(item.id)}}
                       >🗑️</button>
                     </td>
@@ -54,17 +56,20 @@ export default function SummaryProducts() {
         <div>
           <h3>Total: $ {cartTotal}</h3>
         </div>
-        <div>
-          <button 
-          onClick={()=>{emptyCart()}}
-          >Cancelar pedido</button>
+        <div className={Style.container_buttons}>
+          <div>
+            <button
+            className={Style.button_cancelOrder}
+            onClick={()=>{emptyCart()}}
+            >Cancelar pedido</button>
+          </div>
+          <div>
+            <button 
+            style={{background:'#28a745'}}
+            onClick={()=>{isEmpty()}}   
+            >Enviar Pedido</button>
+          </div>
         </div>
-        {/* <div className="col-auto">
-          <button 
-          className='btn btn-primary'
-          onClick={()=>{isEmpty()}}   
-          >Enviar</button>
-        </div> */}
       </section>
 
       </div>
