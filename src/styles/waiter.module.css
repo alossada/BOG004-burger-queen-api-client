@@ -1,4 +1,6 @@
-
+td img{
+    margin: 0 auto;
+}
 .container_waiter {
     background-image: url('../../public/bg.jpg');
 	background-size: cover;
@@ -40,12 +42,28 @@
     grid-template-columns: 1fr 1fr;
 }
 .button_plus{
-    background-color: #349F03;
+    background-color: #28a745;
+    padding: 5px 10px;
 }
 .button_rest{
-    background-color: #CF3E0F;
+    background-color: #17a2b8;
+    padding: 5px 10px;
+}
+.button_remove{
+    background-color: #dc3545;
+    padding: 5px 10px;
+}
+.button_cancelOrder{
+    background-color: #dc3545;
 }
 .container_total_products td{
+    display: block;
     /* padding: 0; */
-    width: 40%;
+    /* width: 40%; */
+}
+.conatiner_name_price_quantity{
+    display: flex;
+}
+.container_buttons{
+    display: flex;
 }
