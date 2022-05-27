@@ -23,7 +23,7 @@ export const RouterByRoles = () => {
                 {
                     activeUser.user.roles.waiter ? (
                         <Route path='/waiter' element={<Waiter  />}>
-                            <Route path='/waiter/order' element={<Order/>}></Route>
+                            <Route index element={<Order/>}></Route>
                             <Route path='/waiter/ready' element={<OrderReady/>}></Route>
                         </Route> 
                     ) : null
