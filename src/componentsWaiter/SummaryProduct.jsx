@@ -26,11 +26,11 @@ export default function SummaryProducts() {
                 return(
                   <tr key={index}>
                     <div className={Style.conatiner_name_price_quantity}>
-                    <td>
-                      <img src={item.image} style={{width:'5rem'}} alt="" />
-                    </td>
+                      <td>
+                        <img src={item.image} style={{width:'5rem'}} alt="" />
+                      </td>
                       <td>{item.name}</td>
-                      <td>{item.price}</td>
+                      <td>${item.price}</td>
                       <td>({item.quantity})</td>
                     </div>
                     <td>
