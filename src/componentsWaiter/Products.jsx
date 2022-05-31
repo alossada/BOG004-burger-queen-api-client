@@ -22,9 +22,8 @@ export default function ProductsMenus({handleAddProduct}) {
       <div className={Style.allProducts}>
       {FilterProducts.map((products, index) => {
         return(
-          <div className='containerList'>
+          <div key={index.toString()} className='containerList'>
             <Menu
-              key={index}
               id={products.id}
               handleAddProduct={handleAddProduct}
               name={products.name}
