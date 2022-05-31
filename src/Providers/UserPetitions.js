@@ -11,7 +11,6 @@ const saveUser = (user) => {
 };
 
 const getUserData = () => {
-    console.log(JSON.parse(sessionStorage.getItem('user')))
     return JSON.parse(sessionStorage.getItem('user'));    
 }
 
@@ -20,7 +19,6 @@ const getToken = () => {
 }
 
 const getId = () => {
-    console.log(getUserData().user.id)
     return getUserData().user.id;
 }
 
