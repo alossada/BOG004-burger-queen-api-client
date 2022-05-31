@@ -21,12 +21,20 @@ export default function SummaryProducts() {
   const createOrder =() =>{
     const token = getToken();    
     ordenPetition(token, items, clients)
-    .then((response)=> {
-      console.log(response)
-    }).catch(() => {
-
-    })
-    emptyCart()
+      .then((response)=> {
+        console.log(response)
+      })
+      .catch((error) => {
+        console.log(error)
+      })
+    emptyCart();
+    const input = document.getElementById('orderClient');
+    console.log('input de orden', input);
+    const e = {
+      target: input
+    }
+    e.target.value = '';
+    setClients(e.target.value)
   };
 
   return (
@@ -34,16 +42,16 @@ export default function SummaryProducts() {
       <div className={Style.container_takeOrder}>
         <h2 style={{color:'#FE8D06', textAlign:'center', fontSize:'1.5rem'}}>Tomando Pedidos</h2>
         <section className={Style.container_total_products}>
-            <div>              
+            <div>      
               <label>Nombre del Cliente</label>
               <input 
-              type='text'
-              name='client'
-              className='client'
-              value={clients}   
-              onChange={event => setClients(event.target.value)}           
-              >              
-              </input>              
+                id = 'orderClient'
+                type='text'
+                name='client'
+                className='client'              
+                value={clients}   
+                onChange={event => setClients(event.target.value)}           
+              ></input>              
               <h5>Productos ({totalUniqueItems}) Total Productos: ({totalItems})</h5>
               <table>
                 <tbody>
