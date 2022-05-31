@@ -5,7 +5,7 @@ import { getToken } from '../Providers/UserPetitions'
 import Menu from './Menu'
 import Style from '../styles/waiter.module.css'
 
-export default function ProductsMenus({handleAddProduct}) {
+export default function ProductsMenus() {
 
   const [FilterProducts, setFilterProducts] =useState([]);
   const token = getToken();
@@ -22,10 +22,9 @@ export default function ProductsMenus({handleAddProduct}) {
       <div className={Style.allProducts}>
       {FilterProducts.map((products, index) => {
         return(
-          <div key={index.toString()} className='containerList'>
+          <div key={index} className='containerList'>
             <Menu
               id={products.id}
-              handleAddProduct={handleAddProduct}
               name={products.name}
               price={products.price}
               image={products.image}
