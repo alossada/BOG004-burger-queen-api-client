@@ -1,10 +1,11 @@
 import React from 'react'
 import Style from '../styles/waiter.module.css'
 import { useCart } from 'react-use-cart'
+import { getToken } from '../Providers/UserPetitions'
+import { ordenPetition } from '../Providers/OrderPetitions'
 // import'../../node_modules/bootstrap/dist/css/bootstrap-grid.min.css' 
 export default function SummaryProducts() {
   const {
-    isEmpty,
     totalUniqueItems,
     items,
     totalItems,
@@ -13,6 +14,15 @@ export default function SummaryProducts() {
     removeItem,
     emptyCart,
   } = useCart();
+
+  const createOrder =() =>{
+    const token = getToken()
+    ordenPetition(token, items)
+    .then((response)=> {
+      console.log(response)
+    })
+  };
+
   return (
     <>
       <div className={Style.container_takeOrder}>
@@ -24,15 +34,13 @@ export default function SummaryProducts() {
             <tbody>
               {items.map((item,index)=>{
                 return(
-                  <tr key={index}>
-                    <div className={Style.conatiner_name_price_quantity}>
+                  <tr key={index.toString()} className={Style.conatiner_name_price_quantity}>
                       <td>
                         <img src={item.image} style={{width:'5rem'}} alt="" />
                       </td>
                       <td>{item.name}</td>
                       <td>${item.price}</td>
                       <td>({item.quantity})</td>
-                    </div>
                     <td>
                       <button 
                         className={Style.button_rest}
@@ -66,7 +74,7 @@ export default function SummaryProducts() {
           <div>
             <button 
             style={{background:'#28a745'}}
-            onClick={()=>{isEmpty()}}   
+            onClick={() => createOrder()}  
             >Enviar Pedido</button>
           </div>
         </div>
