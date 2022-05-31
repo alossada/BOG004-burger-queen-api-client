@@ -1,5 +1,5 @@
 import axios from "axios";
-// import { getToken } from "./UserPetitions";
+import { getId } from "./UserPetitions";
 const url = 'http://localhost:8080/';
 
 const products = (token) => {
@@ -10,7 +10,27 @@ const products = (token) => {
             'content-type': 'application/json',
             authorization: 'Bearer ' + token,
             },
-      })
- } 
+    })
+} 
 
- export { products }
+const ordenPetition = (token, items) =>{
+    console.log('soy token', token, items)
+    return axios({
+        method: "POST",
+        url:url+'orders',
+        headers: {
+            'content-type': 'application/json',
+                authorization: 'Bearer ' + token.accessToken,
+        },
+        body: {
+            id: 5,
+            userId: getId(),
+            client: "Carol Shaw",
+            products: items, 
+            status: "pending",
+            dateEntry: "2022-03-05 15:00" //cambiarlo por la fecha actual
+        }
+    })
+}
+
+export { products, ordenPetition }
