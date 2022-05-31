@@ -67,6 +67,7 @@ td img{
 }
 .conatiner_name_price_quantity{
     display: flex;
+    flex-flow: row wrap;
 }
 .container_buttons{
     display: flex;
