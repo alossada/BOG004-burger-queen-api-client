@@ -2,7 +2,7 @@ import React from 'react'
 import {render, screen, waitFor} from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 
-import LoginForm from '../routes/login.jsx'
+import LoginForm from './LoginForm.jsx'
 
 test('rendering and submitting a basic Formik form', async () => {
     const handleSubmit = jest.fn()
@@ -13,7 +13,7 @@ test('rendering and submitting a basic Formik form', async () => {
     await user.type(screen.getByLabelText(/password/i), '123456')
     
   
-    await user.click(screen.getByRole('button', {email: /submit/i}))
+    await user.click(screen.getByRole('button', {name: /Ingresar/i}))
   
     await waitFor(() =>
       expect(handleSubmit).toHaveBeenCalledWith({
