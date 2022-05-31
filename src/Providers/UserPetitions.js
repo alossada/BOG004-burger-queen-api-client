@@ -1,4 +1,5 @@
 import axios from 'axios'
+
 const url = 'http://localhost:8080/';
 
 const login = (data) => {
@@ -6,21 +7,20 @@ const login = (data) => {
 };
 
 const saveUser = (user) => {
-    sessionStorage.setItem('user', JSON.stringify(user));
+    return sessionStorage.setItem('user', JSON.stringify(user));
 };
 
 const getUserData = () => {
-    JSON.parse(sessionStorage.getItem('user'));    
     console.log(JSON.parse(sessionStorage.getItem('user')))
+    return JSON.parse(sessionStorage.getItem('user'));    
 }
 
 const getToken = () => {
-    console.log(JSON.parse(sessionStorage.getItem('user')))
-    return JSON.parse(sessionStorage.getItem('user'));
-    
+    return JSON.parse(sessionStorage.getItem('user'));    
 }
 
 const getId = () => {
+    console.log(getUserData().user.id)
     return getUserData().user.id;
 }
 
