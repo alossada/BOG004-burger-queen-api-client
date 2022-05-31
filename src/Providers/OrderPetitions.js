@@ -13,22 +13,35 @@ const products = (token) => {
     })
 } 
 
-const ordenPetition = (token, items) =>{
-    console.log('soy token', token, items)
-    return axios({
+const getDate = () => {
+    let rightDate = new Date();
+    return rightDate.getFullYear() +
+        '-' +
+        (rightDate.getMonth() + 1 )+
+        '-' +
+        rightDate.getDate() +
+        ' ' +
+        rightDate.getHours() +
+        ':' +
+        rightDate.getMinutes()    
+}
+
+
+const ordenPetition = async (token, items, clients) =>{
+    console.log('Soy nombre values', clients)
+    return await axios({
         method: "POST",
         url:url+'orders',
         headers: {
             'content-type': 'application/json',
                 authorization: 'Bearer ' + token.accessToken,
         },
-        body: {
-            id: 5,
+        data: {
             userId: getId(),
-            client: "Carol Shaw",
-            products: items, 
-            status: "pending",
-            dateEntry: "2022-03-05 15:00" //cambiarlo por la fecha actual
+            client: clients,
+            products: items,
+            status: 'pending',
+            dataEntry: getDate(),
         }
     })
 }
