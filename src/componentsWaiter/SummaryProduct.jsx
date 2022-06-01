@@ -49,7 +49,7 @@ export default function SummaryProducts() {
                 type='text'
                 name='client'
                 className='client'              
-                value={clients}   
+                value={clients}
                 onChange={event => setClients(event.target.value)}           
               ></input>              
               <h5>Productos ({totalUniqueItems}) Total Productos: ({totalItems})</h5>
