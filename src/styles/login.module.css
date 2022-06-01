@@ -13,15 +13,12 @@
 }
 .LoginForm {
 	margin: 0 auto;
-	width: 350px;
+	width: 320px;
 	margin-top: 50px;
 	border-radius: 5px;
 	padding: 20px;
 	box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
 }
-/* img {
-	width: 120px;
-} */
 .LoginForm > div {
 	margin-bottom: 20px;
 }
