@@ -24,22 +24,20 @@ td img{
     gap: 5px;
     font-size: 1.2rem;
 }
-.container_Orders{
-    display: flex;
-    justify-content: space-around;
-    padding: 30px;
-}
-
 .container_takeOrder{
     border: 1px solid #f1f1f1;
     border-radius: 20px;
-    min-height: 100vh;
-    padding: 0 10px 0px 20px;
-    margin-left: 20px;
+    margin: 0 auto;
+    padding: 20px;
+    width: 90%;
+}
+.waiter_text{
+    font-size: 0.9rem;
 }
 .allProducts{
     display: grid;
     grid-template-columns: 1fr 1fr;
+    padding: 10px;
 }
 .button_plus{
     background-color: #28a745;
@@ -62,8 +60,6 @@ td img{
 }
 .container_total_products td{
     display: block;
-    /* padding: 0; */
-    /* width: 40%; */
 }
 .conatiner_name_price_quantity{
     display: flex;
@@ -71,4 +67,25 @@ td img{
 }
 .container_buttons{
     display: flex;
+}
+
+@media (min-width: 768px){
+    .allProducts{
+        width: 350px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+    .container_Orders{
+        display: flex;
+        justify-content: space-around;
+        padding: 30px;
+    }
+    .container_takeOrder{
+        padding: 0 10px 0px 20px;
+        width: 100%;
+    }
+    .waiter_text{
+        font-size: 1.5rem;
+    }
+    
 }
