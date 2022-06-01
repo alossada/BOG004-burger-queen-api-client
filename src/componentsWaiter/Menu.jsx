@@ -1,9 +1,6 @@
 import Style from '../styles/waiter.module.css'
 import { useCart } from 'react-use-cart';
 const Menu = (props) => {
-    // const onClick = () => {
-    //     props.handleAddProduct({name: props.name, price: props.price, id: props.id, type: props.type});
-    // }
     const { addItem } = useCart()
     
     return (
