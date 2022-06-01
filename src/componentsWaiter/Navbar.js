@@ -8,8 +8,8 @@ import image from '../assets/logo.png'
         <div>
             <nav className={Style.container_waiter_nav}>
               <img className='home-header-logo' src={image} alt="logotipo" />
-                <Link to='/waiter/order' style={{color:'#f1f1f1', fontSize: 25, fontWeight:'700'}} >{props.text1}</Link>
-                <Link to='/waiter/ready' style={{color:'#F1f1f1', fontSize: 25, fontWeight:'700'}}>{props.text2}</Link>
+                <Link to='/waiter/order'className={Style.waiter_text} style={{color:'#f1f1f1',fontWeight:'700'}} >{props.text1}</Link>
+                <Link to='/waiter/ready'className={Style.waiter_text} style={{color:'#F1f1f1',fontWeight:'700'}}>{props.text2}</Link>
             </nav>
             <section>
               <Outlet />
