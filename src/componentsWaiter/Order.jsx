@@ -9,7 +9,6 @@ export default function Order() {
     <>
       <CartProvider>
         <div className={Style.container_Orders}> 
-            {/* <h1 style={{color:"#f1f1f1"}}>Estas son las ordenes</h1> */}
             <div className='productos' >
               <ProductsMenu  />
             </div>
