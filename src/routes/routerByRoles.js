@@ -25,6 +25,7 @@ export const RouterByRoles = () => {
                         <Route path='/waiter' element={<Waiter  />}>
                             <Route index element={<Order/>}></Route>
                             <Route path='/waiter/ready' element={<OrderReady/>}></Route>
+                            <Route path='/waiter/order' element={<Order/>}></Route>
                         </Route> 
                     ) : null
                 }
