@@ -5,12 +5,13 @@
 	margin: 0;
 	box-sizing: border-box;
 }
-
+html{
+    height: 100vh;
+}
 body {
+    min-height: 100vh;
     background-color: #070707;
-	/* background-image: url('../public/bg.jpg'); */
     background-size: cover;
-	/* font-family: 'Raleway', sans-serif; */
 }
 .container-home{
     background-image: url(../public/intro.jpg);
@@ -26,14 +27,19 @@ body {
 }
 
 .home-header-logo{
-    width: 120px;
+    width: 90px;
 }
 .home-header-button{
 	background-color: #FE8D06;
 	width: 120px;
 	padding: 10px;
-	/* padding: 20px, 30px; */
 	text-align: center;
 	border-radius: 20px;
+}
+
+@media (min-width: 768px){
+    .home-header-logo{
+        width: 120px;
+    }
 }
 

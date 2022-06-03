@@ -1,0 +1,63 @@
+h5{
+    text-align: left;
+    padding: 0px 8px 0 8px;
+}
+.logo{
+    width: 100px;
+    margin: 20px 0 0px 40px
+}
+.container_chef{
+    background-image: url('../../public/bg.jpg');
+	background-size: cover;
+	min-height: 100vh;
+    color: #f1f1f1;
+}
+.containerCards{
+    width: 90%;
+    margin: 0 auto;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+.containerOrders{
+    width: 90%;
+    border-radius: 20px;
+    background-color: #1b1c1bbb;
+    text-align: center;
+    font-size: 0.9rem;
+}
+p.containerItems{
+    margin: 5px;
+}
+.nameDate{
+    background-color: #FFE566;
+    margin-bottom: 10px;
+    color: #070707;
+    font-weight: 700;
+    padding: 5px 2px 5px 2px;
+    border-radius: 20px;
+}
+.btnListo{
+    background-color: #fe8e06d3;
+    color: #070707;
+    font-weight: 700;
+    margin: 15px;
+    padding: 3px 20px 3px 20px;
+    border-radius: 20px;
+}
+
+/* Media queries para tablet */
+
+@media (min-width: 768px){
+    .logo{
+        width: 150px;
+    }
+    .containerCards{
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+    .containerOrders{
+        font-size: 1.2rem;
+    }
+    
+}
