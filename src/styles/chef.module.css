@@ -2,9 +2,17 @@ h5{
     text-align: left;
     padding: 0px 8px 0 8px;
 }
+.containerHeader{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
 .logo{
     width: 100px;
-    margin: 20px 0 0px 40px
+}
+.iconLogout{
+    font-size: 2.5rem;
 }
 .container_chef{
     background-image: url('../../public/bg.jpg');
@@ -51,7 +59,10 @@ p.containerItems{
 
 @media (min-width: 768px){
     .logo{
-        width: 150px;
+        width: 120px;
+    }
+    .iconLogout{
+        font-size: 3rem;
     }
     .containerCards{
         grid-template-columns: 1fr 1fr 1fr;

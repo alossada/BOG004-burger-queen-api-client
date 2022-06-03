@@ -1,6 +1,9 @@
 td img{
     margin: 0 auto;
 }
+.iconLogout{
+    font-size: 2rem;
+}
 .container_waiter {
     background-image: url('../../public/bg.jpg');
 	background-size: cover;
@@ -70,6 +73,9 @@ td img{
 }
 
 @media (min-width: 768px){
+    .iconLogout{
+        font-size: 3rem;
+    }
     .allProducts{
         width: 350px;
         display: grid;
@@ -86,6 +92,7 @@ td img{
     }
     .waiter_text{
         font-size: 1.5rem;
+        
     }
     
 }

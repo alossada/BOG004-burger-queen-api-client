@@ -1,7 +1,9 @@
 import { Formik, Form, Field } from "formik"
+import { useNavigate } from "react-router-dom"
+import { useState } from "react"
+import swal from "sweetalert"
 import Styles from '../styles/login.module.css'
 import image from '../assets/logo.png'
-import { useNavigate } from "react-router-dom"
 import { login, saveUser } from "../Providers/UserPetitions"
 
 const LoginForm = () => {
@@ -10,6 +12,11 @@ const LoginForm = () => {
   //--- Funcion para cambio de ruta---//
   const navigateTo = (role) => {
     return navigate(`/${Object.keys(role)}`);
+  }
+
+  const [userError, setUserError] = useState('');
+  const AlertErrMesage =()=>{
+    swal('Lo sentimos usuario y/o contraseña no son correctos')
   }
 
   return (
@@ -44,16 +51,12 @@ const LoginForm = () => {
             login(data)
               .then((response) => {
                 saveUser(response.data);                
-                // console.log('Soy la peticion', response);
-                // console.log('Soy el string', sessionStorage);
                 const activeUser = JSON.parse(sessionStorage.user);
-                // console.log(activeUser);
                 const userRole = activeUser.user.roles;
-                // console.log('Role', userRole);
                 navigateTo(userRole);
               })
-              .catch(function (error) {
-                console.log('Respuesta negativa:', error)
+              .catch(function () {
+                setUserError(<AlertErrMesage/>)
               })
             resetForm();            
           }}
@@ -81,8 +84,9 @@ const LoginForm = () => {
                 {touched.password && errors.password && <div className={Styles.error}>{errors.password}</div>}
               </div>
               <div className={Styles.LoginForm_container_buttons}>
+              {userError && <AlertErrMesage data-testid="login-error-message">{userError}</AlertErrMesage>}
                 <button type="submit" className={Styles.LoginForm_container_button_ingresar}>Ingresar</button>
-                <button type="submit" className={Styles.LoginForm_container_button_regrersar}>Regresar</button>
+                {/* <button type="submit" className={Styles.LoginForm_container_button_regrersar}>Regresar</button> */}
               </div>
             </Form>
           )}
