@@ -2,13 +2,12 @@ import React from 'react'
 import Style from '../styles/chef.module.css'
 
 export default function Items({products}) {
-    console.log('deberia ser array',products)
   return (
     <div>
-      {products.map((product, index)=>{
-          return(
+      {products.map((prod, index)=>{
+        return(
               <div  key={index}>
-                <p className = {Style.containerItems}>✔️{product.name}</p>
+                <p className = {Style.containerItems}>✔️{prod.product.name}</p>
               </div>
           )
       })}
