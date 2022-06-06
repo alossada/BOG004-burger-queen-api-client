@@ -1,7 +1,6 @@
 import { Formik, Form, Field } from "formik"
 import { useNavigate } from "react-router-dom"
 import { useState } from "react"
-import swal from "sweetalert"
 import Styles from '../styles/login.module.css'
 import image from '../assets/logo.png'
 import { login, saveUser } from "../Providers/UserPetitions"
@@ -15,10 +14,7 @@ const LoginForm = () => {
   }
 
   const [userError, setUserError] = useState('');
-  const AlertErrMesage =()=>{
-    swal('Lo sentimos usuario y/o contraseña no son correctos')
-  }
-
+  
   return (
     <>
       <div className={Styles.contenedor}>
@@ -55,8 +51,12 @@ const LoginForm = () => {
                 const userRole = activeUser.user.roles;
                 navigateTo(userRole);
               })
-              .catch(function () {
-                setUserError(<AlertErrMesage/>)
+              .catch((error) => {
+                if(error.message === 'Request failed with status code 400'){
+                  setUserError('Usuario y/o contraseña incorrectas');
+                }else{
+                  setUserError(error.message);
+                }          
               })
             resetForm();            
           }}
@@ -84,9 +84,8 @@ const LoginForm = () => {
                 {touched.password && errors.password && <div className={Styles.error}>{errors.password}</div>}
               </div>
               <div className={Styles.LoginForm_container_buttons}>
-              {userError && <AlertErrMesage data-testid="login-error-message">{userError}</AlertErrMesage>}
+              {userError && <span data-testid='login-err-message' style={{color:'#F1F1F1'}}>{userError}</span>}
                 <button type="submit" className={Styles.LoginForm_container_button_ingresar}>Ingresar</button>
-                {/* <button type="submit" className={Styles.LoginForm_container_button_regrersar}>Regresar</button> */}
               </div>
             </Form>
           )}
