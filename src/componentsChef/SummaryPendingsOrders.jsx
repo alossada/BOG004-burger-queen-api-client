@@ -8,23 +8,34 @@ import Style from '../styles/chef.module.css'
 export default function SummaryPendingsOrders() {
   const [order, setOrder] =useState([]);
   const token = getToken();
-  useEffect(()=>{
+  
+  const newOrder =() => {
     getOrder(token.accessToken)
       .then((response) => {
         setOrder(response.data)
       })
-      .catch(() => {});
-  },[token.accessToken,setOrder]);
-  console.log('soy Order',order)
+      .catch((error) => {
+        console.log(error);
+      });
+  }
+
+  useEffect(()=>{
+    newOrder();
+  },[token.accessToken, setOrder, order]);
+
+  // // useEffect(() => {
+  // //   newOrder();
+  // //   console.log('Orden agregada')
+  // //   console.log(order);
+  // // },[order])
+  
   return (
     <div className={Style.containerCards}>
       {order.map((orders, index)=>{
         return(
           <div  key={index} >
             <OrderStructure
-              date = {orders.dataEntry}
-              cliente = {orders.client}
-              items = {orders} 
+              totalOrders = {orders} 
             />
           </div>
         )
