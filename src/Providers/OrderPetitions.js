@@ -14,7 +14,6 @@ const products = (token) => {
     })
 } 
 
-
 const getDate = () => {
     let rightDate = new Date();
     return rightDate.getFullYear() +
@@ -29,17 +28,19 @@ const getDate = () => {
 }
 
 // Peticion para un solo producto
-// const onlyProduct = (token, itemId)=>{
-//     return axios.get(url + 'products/' + itemId,{
-//         headers: {
-//             'content-type': 'application/json',
-//             authorization: 'Bearer ' + token,
-//         },
-//     })
-// }
+export const onlyProduct = async (token, itemId)=>{
+    return await axios({
+        method: 'GET',
+        url:url+'products/'+itemId,
+        headers: {
+            'content-type': 'application/json',
+            authorization: 'Bearer ' + token,
+        },
+    })
+}
 
 // -----Peticion para crear orden -----
-const ordenPetition = async (token, items, clients) =>{
+const ordenPetition = async (token, newObject, clients) =>{
     return await axios({
         method: "POST",
         url:url+'orders',
@@ -50,17 +51,15 @@ const ordenPetition = async (token, items, clients) =>{
         data: {
             userId: getId(),
             client: clients,
-            products: items,
+            products: newObject,
             status: 'pending',
             dataEntry: getDate(),
         }
     })
-
 }
 
 // -----Peticion para que el chef pueda obtener los productos -----
 const getOrder =  (token) => {
-    console.log('soy token', token)
     return  axios.get(url+'orders',{
         headers: {
             'content-type': 'application/json',
