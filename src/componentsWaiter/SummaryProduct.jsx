@@ -4,7 +4,7 @@ import { useCart } from 'react-use-cart'
 import { useState } from 'react'
 import { getToken } from '../Providers/UserPetitions'
 import { ordenPetition } from '../Providers/OrderPetitions'
-// import'../../node_modules/bootstrap/dist/css/bootstrap-grid.min.css' 
+
 export default function SummaryProducts() {
   const {
     totalUniqueItems,
@@ -18,21 +18,50 @@ export default function SummaryProducts() {
 
   const [clients, setClients] = useState('');
 
-  const createOrder =() =>{
-    const token = getToken();    
-    ordenPetition(token, items, clients)
+  //--- Funcion para creear nueva estrututa de objeto---//
+  const creatObject =()=>{
+    let total = localStorage.getItem('react-use-cart');
+    let arrayItems = [];
+    if (total !== null) {
+      total = JSON.parse(total);
+      
+      total.items.forEach((item)=>{
+        arrayItems.push(
+          {
+            "qty": item.quantity,
+            "product": {
+              "id": item.id,
+              "name": item.name,
+              "price": item.price,
+              "image": item.image,
+              "type": item.type,
+              "dateEntry": item.dateEntry,
+            }
+          }
+        )
+      })
+    }
+    return arrayItems;
+  }
+  
+  //--- Funcion para resolver peticion y crear orden
+    const createOrder =() =>{
+    const token = getToken();  
+    const newObject = creatObject();
+    
+    ordenPetition(token, newObject, clients)
       .then((response)=> {
-        console.log(response)
+        return response;
       })
       .catch((error) => {
-        console.log(error)
-      })
+        return error;
+      });
     emptyCart();
+    
     const input = document.getElementById('orderClient');
-    console.log('input de orden', input);
     const e = {
       target: input
-    }
+      }
     e.target.value = '';
     setClients(e.target.value)
   };
