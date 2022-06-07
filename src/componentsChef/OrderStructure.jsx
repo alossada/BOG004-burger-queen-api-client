@@ -1,8 +1,24 @@
 import React from 'react'
 import Items from './Items'
 import Style from '../styles/chef.module.css'
+import { orderStatus } from '../Providers/OrderPetitions'
+import { getToken  } from '../Providers/UserPetitions'
+
 
 export default function OrderStructure({totalOrders}) {
+  
+  const token = getToken();
+    
+  const newStatus = (orderId) => {
+    orderStatus(orderId, token.accessToken)
+    .then((response)=>{
+      return response
+    })
+    .catch((error) => {
+      return error
+    })
+  };
+
   return (
     <div>
       <div className={Style.containerOrders}>
@@ -15,7 +31,11 @@ export default function OrderStructure({totalOrders}) {
             products = {totalOrders.products}
             qty = {totalOrders.quantity}
           />
-          <button className={Style.btnListo} type='submit'>Listo</button>          
+          <button
+            type='button'
+            className={Style.btnListo}
+            onClick={() =>newStatus(totalOrders.id)}
+          >Listo</button>
       </div>
     </div>
   )
