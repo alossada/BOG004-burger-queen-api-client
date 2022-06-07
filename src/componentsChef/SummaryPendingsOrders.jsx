@@ -20,6 +20,10 @@ export default function SummaryPendingsOrders() {
   }
 
   useEffect(()=>{
+    newOrder()
+  },[]);
+
+  useEffect(()=>{
     const interval = setInterval(()=>{
       newOrder()
     },8000)
