@@ -13,6 +13,7 @@ export default function OrderStructure({totalOrders}) {
         <h5>Pedido:</h5>
           <Items 
             products = {totalOrders.products}
+            qty = {totalOrders.quantity}
           />
           <button className={Style.btnListo} type='submit'>Listo</button>          
       </div>
