@@ -6,8 +6,9 @@ export default function Items({products}) {
     <div>
       {products.map((prod, index)=>{
         return(
-              <div  key={index}>
+              <div className={Style.containerProducts}  key={index}>
                 <p className = {Style.containerItems}>✔️{prod.product.name}</p>
+                <p>{prod.qty}</p>
               </div>
           )
       })}
