@@ -8,7 +8,7 @@ import Style from '../styles/chef.module.css'
 export default function SummaryPendingsOrders() {
   const [order, setOrder] =useState([]);
   const token = getToken();
-  
+
   const newOrder =() => {
     getOrder(token.accessToken)
       .then((response) => {
@@ -20,14 +20,11 @@ export default function SummaryPendingsOrders() {
   }
 
   useEffect(()=>{
-    newOrder();
-  },[token.accessToken, setOrder, order]);
-
-  // // useEffect(() => {
-  // //   newOrder();
-  // //   console.log('Orden agregada')
-  // //   console.log(order);
-  // // },[order])
+    const interval = setInterval(()=>{
+      newOrder()
+    },8000)
+    return () => clearInterval(interval)
+  },[]);
   
   return (
     <div className={Style.containerCards}>
