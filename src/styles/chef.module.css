@@ -39,6 +39,7 @@ h5{
 .containerProducts{
     display: flex;
     gap: 4px;
+    color: #f1f1f1;
 }
 .nameDate{
     background-color: #FFE566;
