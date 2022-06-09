@@ -12,7 +12,8 @@ export default function SummaryPendingsOrders() {
   const newOrder =() => {
     getOrder(token.accessToken)
       .then((response) => {
-        setOrder(response.data)
+        const orderPending = response.data.filter((orden)=> orden.status === 'pending');
+        setOrder(orderPending)
       })
       .catch((error) => {
         console.log(error);
@@ -26,7 +27,7 @@ export default function SummaryPendingsOrders() {
   useEffect(()=>{
     const interval = setInterval(()=>{
       newOrder()
-    },8000)
+    },3000)
     return () => clearInterval(interval)
   },[]);
   

@@ -17,6 +17,7 @@ import image from '../assets/logo.png'
               <img className='home-header-logo' src={image} alt="logotipo" />
                 <Link to='/waiter/order'className={Style.waiter_text} style={{color:'#f1f1f1',fontWeight:'700'}} >{props.text1}</Link>
                 <Link to='/waiter/ready'className={Style.waiter_text} style={{color:'#F1f1f1',fontWeight:'700'}}>{props.text2}</Link>
+                <Link to='/waiter/delivered'className={Style.waiter_text} style={{color:'#F1f1f1',fontWeight:'700'}}>{props.text3}</Link>
                 <BiLogOut className={Style.iconLogout} onClick={logOut}/>
             </nav>
             <section>

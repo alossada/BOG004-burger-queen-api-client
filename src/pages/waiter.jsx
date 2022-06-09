@@ -7,7 +7,7 @@ export default function Waiter() {
   return (
     <>
       <div className={Style.container_waiter}>
-        <NavBar text1='Tomar Pedidos' text2 = 'Pedidos Listos'/>
+        <NavBar text1='Pedidos' text2 = 'Listos' text3 = 'Entregados'/>
       </div>
     </>
   )
