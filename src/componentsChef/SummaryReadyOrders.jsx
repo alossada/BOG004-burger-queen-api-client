@@ -6,7 +6,8 @@ import OrderState from './OrderState';
 import Style from '../styles/chef.module.css'
 
 export default function SummaryReadyOrders() {
-
+  
+ 
   const [order, setOrder] =useState([]);
   const token = getToken();
 
@@ -44,10 +45,9 @@ export default function SummaryReadyOrders() {
               (1000 * 60)
           );
           console.log('TOTALTIME:', totalTime)
-          console.log('ORDERS:', orders)
         return(
           <div  key={index}>
-            <p>{totalTime}</p>
+            <p>{totalTime} Minutos</p>
             <OrderState
               totalOrders = {orders} 
             />
