@@ -9,6 +9,7 @@ return (
         <div className={Style.containerOrders}>
             <div className={Style.nameDate}>
                 <p>{totalOrders.client}</p>
+                <p>{totalOrders.dateProcessed}</p>
             </div>
             <h5>Pedido:</h5>
             <Items 
