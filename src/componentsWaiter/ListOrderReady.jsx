@@ -1,20 +1,21 @@
 import React from 'react'
 import { useEffect, useState } from 'react'
-import { getOrder } from '../Providers/OrderPetitions';
+import { getOrder, orderStatusDelivered } from '../Providers/OrderPetitions';
 import { getToken } from '../Providers/UserPetitions'
-// import OrderStructure from '../componentsChef/OrderStructure';
 import Style from '../styles/chef.module.css'
 import OrderState from '../componentsChef/OrderState';
 
 export default function OrdenReady() {
-  const [order, setOrder] =useState([]);
+  const [orders, setOrders] =useState([]);
   const token = getToken();
 
-  const newOrder =() => {
+
+
+  const OrderDelivering =() => {
     getOrder(token.accessToken)
       .then((response) => {
-        const orderPending = response.data.filter((orden)=> orden.status === 'delivering');
-        setOrder(orderPending)
+        const orderPending = response.data.filter((ordens)=> ordens.status === 'delivering');
+        setOrders(orderPending)
       })
       .catch((error) => {
         console.log(error);
@@ -22,29 +23,32 @@ export default function OrdenReady() {
   }
 
   useEffect(()=>{
-    newOrder()
+    OrderDelivering()
   },[]);
 
   useEffect(()=>{
     const interval = setInterval(()=>{
-      newOrder()
+      OrderDelivering()
     },3000)
     return () => clearInterval(interval)
   },[]);
+
+  
   return (
     <>
-       <div className={Style.containerCards}>
-          {order.map((orders, index)=>{
+      <div className={Style.containerCards}>
+          {orders.map((order, index)=>{
+            
           return(
             <div  key={index} >
               <OrderState
-                totalOrders = {orders} 
+                totalOrders = {order} 
               />
             <button
             type='button'
             id='button'
             className={Style.btnListo}
-            // onClick={() =>newStatus(totalOrders.id)}
+            onClick={() =>orderStatusDelivered(order.id, token.accessToken)}
             >Entregar</button>
             </div>
           )
