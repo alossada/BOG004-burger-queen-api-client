@@ -72,4 +72,19 @@ const orderStatus = async(orderId, token) => {
     })
 }
 
-export { products, ordenPetition, getOrder, orderStatus }
+const orderStatusDelivered = async(orderId, token) => {
+    console.log('order id', orderId, 'token', token)
+    return await axios({
+        method: "PATCH",
+        url:url+'orders/'+ orderId,
+        headers: {
+            'content-type': 'application/json',
+            authorization: 'Bearer ' + token,
+        },
+        data: {
+            status: 'delivered',
+        }
+    })
+}
+
+export { products, ordenPetition, getOrder, orderStatus, orderStatusDelivered }
