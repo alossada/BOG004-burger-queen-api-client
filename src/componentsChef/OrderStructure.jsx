@@ -8,6 +8,7 @@ import { getToken  } from '../Providers/UserPetitions'
 export default function OrderStructure({totalOrders}) {
 
 const token = getToken();
+
 const newStatus = (orderId) => {
     orderStatus(orderId, token.accessToken)
     .then((response)=>{
