@@ -14,20 +14,7 @@ const products = (token) => {
     })
 } 
 
-// const getDate = () => {
-//     let rightDate = new Date();
-//     return rightDate.getFullYear() +
-//         '-' +
-//         (rightDate.getMonth() + 1 )+
-//         '-' +
-//         rightDate.getDate() +
-//         ' ' +
-//         rightDate.getHours() +
-//         ':' +
-//         rightDate.getMinutes()    
-// }
-
-// Peticion para un solo producto
+//--- Peticion para obtner un solo producto---//
 export const onlyProduct = async (token, itemId)=>{
     return await axios({
         method: 'GET',
@@ -39,7 +26,7 @@ export const onlyProduct = async (token, itemId)=>{
     })
 }
 
-// -----Peticion para crear orden -----
+// -----Peticion para crear orden -----//
 const ordenPetition = async (token, newObject, clients) =>{
     return await axios({
         method: "POST",
@@ -53,13 +40,13 @@ const ordenPetition = async (token, newObject, clients) =>{
             client: clients,
             products: newObject,
             status: 'pending',
-            dataEntry: new Date().toLocaleString('sv'),
+            dateEntry: new Date().toLocaleString('sv'),
 
         }
     })
 }
 
-// -----Peticion para que el chef pueda obtener los productos -----
+// -----Peticion para obtener los productos en el chef---//
 const getOrder =  (token) => {
     return  axios.get(url+'orders',{
         headers: {
