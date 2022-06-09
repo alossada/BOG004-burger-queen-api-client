@@ -14,18 +14,18 @@ const products = (token) => {
     })
 } 
 
-const getDate = () => {
-    let rightDate = new Date();
-    return rightDate.getFullYear() +
-        '-' +
-        (rightDate.getMonth() + 1 )+
-        '-' +
-        rightDate.getDate() +
-        ' ' +
-        rightDate.getHours() +
-        ':' +
-        rightDate.getMinutes()    
-}
+// const getDate = () => {
+//     let rightDate = new Date();
+//     return rightDate.getFullYear() +
+//         '-' +
+//         (rightDate.getMonth() + 1 )+
+//         '-' +
+//         rightDate.getDate() +
+//         ' ' +
+//         rightDate.getHours() +
+//         ':' +
+//         rightDate.getMinutes()    
+// }
 
 // Peticion para un solo producto
 export const onlyProduct = async (token, itemId)=>{
@@ -53,7 +53,8 @@ const ordenPetition = async (token, newObject, clients) =>{
             client: clients,
             products: newObject,
             status: 'pending',
-            dataEntry: getDate(),
+            dataEntry: new Date().toLocaleString('sv'),
+
         }
     })
 }
@@ -79,6 +80,7 @@ const orderStatus = async(orderId, token) => {
         },
         data: {
             status: 'delivering',
+            dateProcessed: new Date().toLocaleString('sv'),
         }
     })
 }
