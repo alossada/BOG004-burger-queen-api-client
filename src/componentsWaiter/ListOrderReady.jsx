@@ -36,6 +36,7 @@ export default function OrdenReady() {
   
   return (
     <>
+     <h2 style={{color: "#FE8D06", textAlign:'center'}}>Listos</h2>
       <div className={Style.containerCards}>
           {orders.map((order, index)=>{
             

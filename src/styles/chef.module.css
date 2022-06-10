@@ -41,6 +41,21 @@ h5{
     gap: 4px;
     color: #f1f1f1;
 }
+.containerDelivered{
+    border:  solid 1px #FE8D06;
+    width: 90%;
+    margin: 0 auto;
+}
+.containerDelivered th{
+    text-align: center;
+    border: 1px solid #FE8D06 ;
+}
+.delivered_head{
+    background-color: #FFE566;
+    color: #070707;
+    font-weight: 700;
+    font-size: 1.2rem;
+}
 .nameDate{
     background-color: #FFE566;
     margin-bottom: 10px;
