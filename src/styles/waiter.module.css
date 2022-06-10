@@ -71,6 +71,11 @@ td img{
 .container_buttons{
     display: flex;
 }
+
+.title{
+    text-align: center;
+    color: #FE8D06;
+}
 .containerDelivered{
     border:  solid 1px #FE8D06;
     width: 90%;
