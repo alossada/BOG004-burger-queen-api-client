@@ -2,7 +2,7 @@ import React from 'react'
 import { useEffect, useState } from 'react'
 import { getOrder,  } from '../Providers/OrderPetitions';
 import { getToken } from '../Providers/UserPetitions'
-import Style from '../styles/chef.module.css'
+import Style from '../styles/waiter.module.css'
 
 export default function OrdersDelivered() {
   const [OrdersDelivered, setOrdersDelivered] =useState([]);
