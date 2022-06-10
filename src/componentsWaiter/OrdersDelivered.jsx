@@ -32,29 +32,52 @@ export default function OrdersDelivered() {
   },[]);
   
   return (
-    <div className={Style.containerCards}>
+        <table className={Style.containerDelivered}>
+            <thead className={Style.delivered_head}>
+              <tr>
+                <th>Cliente</th>
+                <th>Hora Inicial</th>
+                <th>Hora Entrega</th>                  
+              </tr>
+            </thead>
+            <tbody>
+              {
+                OrdersDelivered.map((order)=>{
+                    return(
+                      <tr>
+                        <th>{order.client}</th>                  
+                        <th>{order.dateEntry}</th>
+                        <th>{order.dateProcessed}</th>  
+                      </tr> 
+                    )
+                })
+              }
+            </tbody>
+        </table>
+
+    // <div className={Style.containerCards}>
 
       
-      {OrdersDelivered.map((order, index)=>{
-        return(
-          <div  key={index} >
-            <table>
-              <thead>
-                <tr>
-                  <th>Cliente</th>
-                  <th>Hora Inicial</th>
-                  <th>Hora Entrega</th>                  
-                </tr>
-                <tr>
-                  <th>{order.client}</th>                  
-                  <th>{order.dateEntry}</th>
-                  <th>{order.dateProcessed}</th>  
-                </tr>
-              </thead>
-            </table>         
-          </div>
-        )
-      })}
-    </div>
+    //   {OrdersDelivered.map((order, index)=>{
+    //     return(
+    //       <div  key={index} >
+    //         <table>
+    //           <thead>
+    //             <tr>
+    //               <th>Cliente</th>
+    //               <th>Hora Inicial</th>
+    //               <th>Hora Entrega</th>                  
+    //             </tr>
+    //             <tr>
+    //               <th>{order.client}</th>                  
+    //               <th>{order.dateEntry}</th>
+    //               <th>{order.dateProcessed}</th>  
+    //             </tr>
+    //           </thead>
+    //         </table>         
+    //       </div>
+    //     )
+    //   })}
+    // </div>
   )
 }
