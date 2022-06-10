@@ -32,6 +32,8 @@ export default function OrdersDelivered() {
   },[]);
   
   return (
+    <>
+    <h2 className={Style.title}>Entregados</h2>
         <table className={Style.containerDelivered}>
             <thead className={Style.delivered_head}>
               <tr>
@@ -54,6 +56,7 @@ export default function OrdersDelivered() {
               }
             </tbody>
         </table>
+    </>
 
     // <div className={Style.containerCards}>
 
