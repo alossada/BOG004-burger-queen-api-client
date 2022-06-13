@@ -1,26 +1,46 @@
 import React from 'react'
 import Style from '../styles/admin.module.css'
 
-export default function UserTable() {
+export default function UserTable(props) {
   return (
     <table>
-    <thead>
-      <tr>
-        <th>Email</th>
-        <th>Rol</th>
-        <th>Acciones</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>Email data</td>
-        <td>Rol data</td>
-        <td>
-          <button className={Style.button}>Editar</button>
-          <button className={Style.button}>Eliminar</button>
-        </td>
-      </tr>
-    </tbody>
+      <thead>
+        <tr>
+          <th>Nombre</th>          
+          <th>Rol</th>          
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        {
+          props.users.length > 0 ?
+          props.users.map((user, index) => (
+            <tr key={index} >
+              <td>{user.email}</td>              
+              <td>{`${Object.keys(user.rol)}`}</td>
+              <td>
+                <button 
+                className="button muted-button"
+                onClick={
+                  ()=> {props.editRow(user)}
+                }                
+                >
+                  Editar
+                </button>
+                <button 
+                  className="button muted-button"
+                  onClick={() => {props.deleteUser(user.id)}}
+                >
+                  Eliminar</button>
+              </td>
+            </tr>
+          )) : (
+            <tr>
+              <td colSpan={3}>No existen empleados</td>
+            </tr>
+          )
+        }
+      </tbody>
   </table>
   )
 }
