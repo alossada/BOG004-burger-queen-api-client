@@ -2,6 +2,7 @@ import React from 'react'
 import Style from '../styles/admin.module.css'
 
 export default function UserTable(props) {
+  console.log('PROPS', props)
   return (
     <table className={Style.container_adminTable}>
       <thead>
