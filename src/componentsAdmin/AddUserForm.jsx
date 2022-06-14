@@ -16,7 +16,7 @@ export default function AddUserForm({addUser}) {
 
   return (
     <form className={Style.container_form} onSubmit={handleSubmit(onSubmit)}>
-      <label>correo</label>
+      <label style={{fontWeight:'700', fontSize:'1.2rem'}}>Correo</label>
       <input type="text" name="email" {...register("email", {
                 required: {value: true, message: 'Campo Requerido'}
             })}
@@ -24,15 +24,15 @@ export default function AddUserForm({addUser}) {
       <div>
         {errors?.email?.message}
       </div>
-      <label>contraseña</label>
-      <input type="text" name="password" {...register("password", {
+      <label style={{fontWeight:'700', fontSize:'1.2rem'}}>Contraseña</label>
+      <input type="password" name="password" {...register("password", {
                 required: {value: true, message: 'Campo Requerido'}
             })}
       />
       <div>
         {errors?.password?.message}
       </div>
-      <label>Rol</label>
+      <label style={{fontWeight:'700', fontSize:'1.2rem'}}>Rol</label>
       <input type="text" name="rol" {...register("rol", {
             required: {value: true, message: 'Campo Requerido'}
         })} />
