@@ -24,7 +24,7 @@ const getId = () => {
 
 //--- Obtiene info de usuario---//
 const getUserInfo = async() => {
-    console.log('que es getToken', getToken().accessToken)
+    
     return await axios({
         method: "GET", 
         url:url+'users', 
@@ -36,8 +36,11 @@ const getUserInfo = async() => {
 }
 
   //---Peticion para crear Usuario---//
-const createUser = async() => {
-    console.log('que es createUser', getToken().accessToken)
+const createUser = async(user) => {
+    console.log('peticion create user', user)
+    const roleObject = {}; 
+    roleObject[user.rol] = true;
+    
     return await axios({
         method: "POST", 
         url:url+'users', 
@@ -46,11 +49,9 @@ const createUser = async() => {
                 authorization: 'Bearer ' + getToken().accessToken,
         },
         data: {         
-            id: getId(),
-            email: "grace.hopper@systers.xyz",
-            roles: {
-            admin: true
-            }
+            email: user.email,
+            password: user.password,
+            roles: roleObject,
         },         
     })     
 }
