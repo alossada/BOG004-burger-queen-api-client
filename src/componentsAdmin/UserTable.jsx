@@ -3,7 +3,7 @@ import Style from '../styles/admin.module.css'
 
 export default function UserTable(props) {
   return (
-    <table>
+    <table className={Style.container_adminTable}>
       <thead>
         <tr>
           <th>Nombre</th>          
@@ -20,7 +20,7 @@ export default function UserTable(props) {
               <td>{`${Object.keys(user.rol)}`}</td>
               <td>
                 <button 
-                className="button muted-button"
+                className={Style.button_editar}
                 onClick={
                   ()=> {props.editRow(user)}
                 }                
@@ -28,7 +28,7 @@ export default function UserTable(props) {
                   Editar
                 </button>
                 <button 
-                  className="button muted-button"
+                  className={Style.button_eliminar}
                   onClick={() => {props.deleteUser(user.id)}}
                 >
                   Eliminar</button>
@@ -41,6 +41,6 @@ export default function UserTable(props) {
           )
         }
       </tbody>
-  </table>
+    </table>
   )
 }
