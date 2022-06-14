@@ -60,13 +60,13 @@ setUsers(arrayFiterUser)
 const [editing, setEditing] = useState(false);
 
 const [currentUser, setCurrentUser] = useState({
-    id: null, name: '', username:''
+    id: null, email:'', password: '', rol:''
 });
 
 const editRow = (user) => {
     setEditing(true);
     setCurrentUser({
-        id: user.id, name: user.name, username: user.username
+        id: user.id, email: user.email, password: user.password, rol: `${Object.keys(user.rol)}`
     })
 }
 
@@ -78,13 +78,12 @@ const updateUser = (id, updateUser) => {
 
 return (    
     <div className={Style.container} >      
-        <h1 style={{color:'#f1f1f1',textAlign:'center', margin:'30px'}}>Administrador</h1>
         <div className={Style.flex_row}>
             <div className={Style.flex_large}>
             <h2 className={Style.addEmployers_title}>Administrar Empleados</h2>
             <UserTable 
                 users={users} 
-                deleteUser={deleteUser}               
+                deleteUser={deleteUser}     
                 editRow={editRow}
             />
             </div>
