@@ -1,15 +1,17 @@
 import React from 'react'
 import { useForm } from 'react-hook-form';
+import Style from '../styles/admin.module.css'
 
 export default function EditUser(props) {
-  //console.log(props.currentUser)
+  console.log('PROPS DESDE EDIT',props.currentUser)
 
   const {register, handleSubmit, formState: { errors }, setValue} = useForm({
     defaultValues:props.currentUser
   });
 
-  setValue('name',props.currentUser.name);
-  setValue('username',props.currentUser.username);
+  setValue('email',props.currentUser.email);
+  setValue('password',props.currentUser.password);
+  setValue('rol',props.currentUser.rol);
 
   const onSubmit = (data, e) => {
     //console.log(data)
@@ -23,22 +25,30 @@ export default function EditUser(props) {
 
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
-      <label>Nombre</label>
-      <input type="text" name="name" {...register("name", {
+      <label>Correo</label>
+      <input type="text" name="email" {...register("email", {
                 required: {value: true, message: 'Campo Requerido'}
             })}
       />
       <div>
-        {errors?.name?.message}
+        {errors?.email?.message}
+      </div>
+      <label>Contraseña</label>
+      <input type="password" name="password" {...register("password", {
+                required: {value: true, message: 'Campo Requerido'}
+            })}
+      />
+      <div>
+        {errors?.password?.message}
       </div>
       <label>Rol</label>
-      <input type="text" name="username" {...register("username", {
+      <input type="text" name="rol" {...register("rol", {
             required: {value: true, message: 'Campo Requerido'}
         })} />
       <div>
-        {errors?.usarname?.message}
+        {errors?.rol?.message}
       </div>
-      <button>Editar</button>
+      <button className={Style.button_editar_send}>Editar</button>
     </form>
   )
 }
