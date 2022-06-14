@@ -1,5 +1,6 @@
 import React from 'react'
 import { useForm } from 'react-hook-form';
+import Style from '../styles/admin.module.css'
 
 export default function Adduser(props) {
   const {register, handleSubmit, formState: { errors }} = useForm();
@@ -13,7 +14,7 @@ export default function Adduser(props) {
   }
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)}>
+    <form className={Style.container_form} onSubmit={handleSubmit(onSubmit)}>
       <label>correo</label>
       <input type="text" name="email" {...register("email", {
                 required: {value: true, message: 'Campo Requerido'}
@@ -37,7 +38,7 @@ export default function Adduser(props) {
       <div>
         {errors?.rol?.message}
       </div>
-      <button>Agregar</button>
+      <button className={Style.button_agregar}>Agregar</button>
     </form>
   )
 }
