@@ -1,6 +1,6 @@
 import React from 'react'
 import { useState, useEffect } from 'react'
-//import Style from '../styles/admin.module.css'
+import Style from '../styles/admin.module.css'
 import UserTable from '../componentsAdmin/UserTable'
 import EditUser from '../componentsAdmin/EditUser'
 import AddUser from '../componentsAdmin/AddUser'
@@ -75,31 +75,31 @@ const updateUser = (id, updateUser) => {
 
 
 return (    
-    <div className="container" >      
-        <h1>ADMINISTRADOR</h1>
-        <div className="flex-row">
-            <div className="flex-large">
-            <h2>Administrar Empleados</h2>
+    <div className={Style.container} >      
+        <h1 style={{color:'#f1f1f1',textAlign:'center', margin:'30px'}}>Administrador</h1>
+        <div className={Style.flex_row}>
+            <div className={Style.flex_large}>
+            <h2 className={Style.addEmployers_title}>Administrar Empleados</h2>
             <UserTable 
                 users={users} 
                 deleteUser={deleteUser}               
                 editRow={editRow}
             />
             </div>
-            <div className="flex-large">
+            <div className={Style.flex_large}>
 
             {
                 editing ? (
                     <div>
-                        <h2>Editar Empleados</h2>
+                        <h2 className={Style.addEmployers_title}>Editar Empleados</h2>
                         <EditUser 
                         currentUser={currentUser}
                         updateUser={updateUser}
                         />
                     </div>
                 ) : (
-                    <div>
-                        <h2>Agregar Empleados</h2>
+                    <div className={Style.conatiner_addEmployers}>
+                        <h2 className={Style.addEmployers_title}>Agregar Empleados</h2>
                         <AddUser
                         addUser={addUser}/>
                     </div>
