@@ -3,8 +3,8 @@ import { useState, useEffect } from 'react'
 import Style from '../styles/admin.module.css'
 import UserTable from '../componentsAdmin/UserTable'
 import EditUser from '../componentsAdmin/EditUser'
-import AddUser from '../componentsAdmin/AddUser'
 import { getUserInfo, createUser } from '../Providers/UserPetitions'
+import AddUserForm from './AddUserForm'
 
 
 export default function AdminController() {
@@ -14,9 +14,11 @@ const [users, setUsers] = useState([])
 const userInfo = () =>{
     getUserInfo()
         .then((response)=>{
+            console.log('Informacion de usuarios', response.data)
             setUsers(response.data.map((user)=>{
                 return {
                 email: user.email,
+                id: user.id,
                 password: user.password,
                 rol: user.roles,
                 }
@@ -33,17 +35,17 @@ useEffect(()=> {
 
 
 const addUser = (user) => {
-    createUser()
+    createUser(user)
         .then((response)=>{
             console.log('que responde addUser',response)
-            setUsers([
-              ...users,
-              user
-            ])
         })
         .catch((error)=>{
-        console.log(error)
+            console.log(error)
         })
+        setUsers([
+            ...users,
+            user
+        ])
 }
     // user.id = uuidv4()
 //   }
@@ -100,7 +102,7 @@ return (
                 ) : (
                     <div className={Style.conatiner_addEmployers}>
                         <h2 className={Style.addEmployers_title}>Agregar Empleados</h2>
-                        <AddUser
+                        <AddUserForm
                         addUser={addUser}/>
                     </div>
                 )
