@@ -19,7 +19,7 @@ export default function UserTable(props) {
             <tr key={index} >
               <td>{user.email}</td>              
               <td>{`${Object.keys(user.rol)}`}</td>
-              <td>
+              <td className={Style.conatiner_buttons}>
                 <button 
                 className={Style.button_editar}
                 onClick={
