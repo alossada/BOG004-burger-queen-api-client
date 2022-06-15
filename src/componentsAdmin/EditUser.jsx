@@ -1,5 +1,6 @@
 import React from 'react'
 import { useForm } from 'react-hook-form';
+import { editUser } from '../Providers/UserPetitions';
 import Style from '../styles/admin.module.css'
 
 export default function EditUser(props) {
@@ -14,9 +15,17 @@ export default function EditUser(props) {
   setValue('rol',props.currentUser.rol);
 
   const onSubmit = (data, e) => {
-    //console.log(data)
+    data.rol = {
+      [data.rol]:true
+    }
+    editUser(data.id, data)
+    .then((response)=>{
+      return response
+    })
+    .catch((error)=>{
+      return error
+    })
     data.id = props.currentUser.id
-  
     props.updateUser(props.currentUser.id, data)
     
     //limpia los campos
