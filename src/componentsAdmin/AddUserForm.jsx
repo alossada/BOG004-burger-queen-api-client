@@ -3,11 +3,15 @@ import { useForm } from 'react-hook-form';
 import Style from '../styles/admin.module.css'
 
 export default function AddUserForm({addUser}) {
+
   
   const {register, handleSubmit, formState: { errors }} = useForm();
 
   const onSubmit = (data, e) => {
-    console.log('desde addUser Data', data.email)
+    data.rol = {
+      [data.rol]:true
+    }
+    console.log('desde addUser Data', data)
     addUser(data)
     
     //limpia los campos
