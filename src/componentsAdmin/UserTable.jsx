@@ -2,7 +2,7 @@ import React from 'react'
 import Style from '../styles/admin.module.css'
 
 export default function UserTable(props) {
-  console.log('PROPS', props)
+  // console.log('PROPS', props)
   return (
     <table className={Style.container_adminTable}>
       <thead>
@@ -19,7 +19,7 @@ export default function UserTable(props) {
             <tr key={index} >
               <td>{user.email}</td>              
               <td>{`${Object.keys(user.rol)}`}</td>
-              <td>
+              <td className={Style.conatiner_buttons}>
                 <button 
                 className={Style.button_editar}
                 onClick={
@@ -30,7 +30,7 @@ export default function UserTable(props) {
                 </button>
                 <button 
                   className={Style.button_eliminar}
-                  onClick={() => {props.deleteUser(user.id)}}
+                  onClick={() => {props.deleteUser(user.id, user)}}
                 >
                   Eliminar</button>
               </td>

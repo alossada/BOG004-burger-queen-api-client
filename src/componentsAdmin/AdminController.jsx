@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react'
 import Style from '../styles/admin.module.css'
 import UserTable from '../componentsAdmin/UserTable'
 import EditUser from '../componentsAdmin/EditUser'
-import { getUserInfo, createUser } from '../Providers/UserPetitions'
+import { getUserInfo, createUser, userDelete } from '../Providers/UserPetitions'
 import AddUserForm from './AddUserForm'
 
 
@@ -14,7 +14,6 @@ const [users, setUsers] = useState([])
 const userInfo = () =>{
     getUserInfo()
         .then((response)=>{
-            console.log('Informacion de usuarios', response.data)
             setUsers(response.data.map((user)=>{
                 return {
                 email: user.email,
@@ -29,8 +28,8 @@ const userInfo = () =>{
             })   
         }
         
-useEffect(()=> {       
-    userInfo()               
+useEffect(()=> {
+    userInfo()
 }, [])       
 
 
@@ -47,26 +46,37 @@ const addUser = (user) => {
             user
         ])
 }
-    // user.id = uuidv4()
-//   }
+
 
 //---Eliminar usuarios---//
-const deleteUser = (id) =>{
+const deleteUser = (id, users) =>{
+    console.log('soy id y users',id, users)
+    userDelete(id, users)
+        .then((response)=>{
+            console.log('soy DELETE', response)
+        })
+        .catch((error)=>{
+            console.log(error)
+        })
     const arrayFiterUser = users.filter(user => user.id !== id )
-setUsers(arrayFiterUser)
+    setUsers(arrayFiterUser)
 }
+
+// useEffect(()=>{
+//     deleteUser()
+// },[])
 
 //---Editar usuarios---//
 const [editing, setEditing] = useState(false);
 
 const [currentUser, setCurrentUser] = useState({
-    id: null, name: '', username:''
+    id: null, email:'', password: '', rol:''
 });
 
 const editRow = (user) => {
     setEditing(true);
     setCurrentUser({
-        id: user.id, name: user.name, username: user.username
+        id: user.id, email: user.email, password: user.password, rol: `${Object.keys(user.rol)}`
     })
 }
 
@@ -78,13 +88,12 @@ const updateUser = (id, updateUser) => {
 
 return (    
     <div className={Style.container} >      
-        <h1 style={{color:'#f1f1f1',textAlign:'center', margin:'30px'}}>Administrador</h1>
         <div className={Style.flex_row}>
             <div className={Style.flex_large}>
             <h2 className={Style.addEmployers_title}>Administrar Empleados</h2>
             <UserTable 
                 users={users} 
-                deleteUser={deleteUser}               
+                deleteUser={deleteUser}     
                 editRow={editRow}
             />
             </div>

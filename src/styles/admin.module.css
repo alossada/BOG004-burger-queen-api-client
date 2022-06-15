@@ -4,6 +4,21 @@
   min-height: 100vh;
   color: #f1f1f1;
 }
+.container_adminTable{
+  margin: 0 auto;
+  width: 100%;
+  border: 2px solid #FE8D06;
+}
+.container_adminTable thead th{
+  border: 1px solid #FE8D06;
+  background-color: #FFE566;
+  color: #070707;
+  text-align: center;
+  font-size: 1.2rem;
+}
+.container_adminTable td{
+  border: 1px solid #FE8D06;
+}
 
 .addEmployers_title{
   text-align: center;
@@ -18,12 +33,27 @@
   margin-top: 20px;
 }
 .button_editar{
-  background-color: #d89037;
+  border: 2px solid #FE8D06;
+  background-color: transparent;
+}
+.button_editar_send{
+  background-color: #FE8D06;
+  width: 100%;
+  margin-top: 20px;
   color: #070707;
+  font-weight: 700;
 }
 .button_eliminar{
-  background-color: #ce4007;
+  background-color: rgb(211, 62, 16);
+  /* color: #070707; */
   margin-left: 10px;
+}
+.button_editar:hover,
+.button_agregar:hover,
+.button_editar_send:hover,
+.button_eliminar:hover{
+  background-color: transparent;
+  border: 1px solid #FE8D06;
 }
 .container, .small-container, .medium-container {
   max-width: 1200px;
@@ -64,7 +94,9 @@
 }
 .flex-small,
 .flex_large {
-  flex-basis: 100%;
+  margin: 0 auto;
+  width: 90%;
+  /* flex-basis: 100%; */
   margin-bottom: 1rem;
 }
 /* Small screen breakpoint */
@@ -91,6 +123,9 @@
 }
 /* Large screen breakpoint */
 @media (min-width: 1000px) {
+  .conatiner_buttons{
+    width: 50%;
+  }
   .flex_large {
     flex: 1;
     margin-bottom: 0;

@@ -37,9 +37,8 @@ const getUserInfo = async() => {
 
   //---Peticion para crear Usuario---//
 const createUser = async(user) => {
-    console.log('peticion create user', user)
     const roleObject = {}; 
-    roleObject[user.rol] = true;
+    roleObject[`${Object.keys(user.rol)}`] = true;
     
     return await axios({
         method: "POST", 
@@ -56,6 +55,45 @@ const createUser = async(user) => {
     })     
 }
 
+  //---Peticion para editar Usuario---//
+const editUser = async (userId, user)=>{
+    const objetRole = {};
+    objetRole[`${Object.keys(user.rol)}`] = true;
+    return await axios({
+        method: "PATCH", 
+        url:url+'users/'+ userId, 
+        headers: {
+            'content-type': 'application/json',
+                authorization: 'Bearer ' + getToken().accessToken,
+        },
+        data: {         
+            email: user.email,
+            password: user.password,
+            roles: objetRole,
+        },         
+    })     
+}
+
+  //---Peticion para eliminar Usuario---//
+  const userDelete = async (id, user)=>{
+    const objetRole = {};
+    objetRole[`${Object.keys(user.rol)}`] = true;
+    return await axios({
+        method: "DELETE", 
+        url:url+'users/'+ id, 
+        headers: {
+            'content-type': 'application/json',
+                authorization: 'Bearer ' + getToken().accessToken,
+        },
+        data: {         
+            email: user.email,
+            password: user.password,
+            roles: objetRole,
+        },         
+    })     
+}
+
+
 export {
     login,
     saveUser,
@@ -63,5 +101,7 @@ export {
     getId,
     getToken,
     getUserInfo,
-    createUser
+    createUser,
+    editUser,
+    userDelete
 }
