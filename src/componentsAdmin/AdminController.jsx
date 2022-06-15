@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react'
 import Style from '../styles/admin.module.css'
 import UserTable from '../componentsAdmin/UserTable'
 import EditUser from '../componentsAdmin/EditUser'
-import { getUserInfo, createUser } from '../Providers/UserPetitions'
+import { getUserInfo, createUser, userDelete } from '../Providers/UserPetitions'
 import AddUserForm from './AddUserForm'
 
 
@@ -14,7 +14,6 @@ const [users, setUsers] = useState([])
 const userInfo = () =>{
     getUserInfo()
         .then((response)=>{
-            console.log('Informacion de usuarios', response.data)
             setUsers(response.data.map((user)=>{
                 return {
                 email: user.email,
@@ -29,8 +28,8 @@ const userInfo = () =>{
             })   
         }
         
-useEffect(()=> {       
-    userInfo()               
+useEffect(()=> {
+    userInfo()
 }, [])       
 
 
@@ -47,14 +46,25 @@ const addUser = (user) => {
             user
         ])
 }
-    // user.id = uuidv4()
-//   }
+
 
 //---Eliminar usuarios---//
-const deleteUser = (id) =>{
+const deleteUser = (id, users) =>{
+    console.log('soy id y users',id, users)
+    userDelete(id, users)
+        .then((response)=>{
+            console.log('soy DELETE', response)
+        })
+        .catch((error)=>{
+            console.log(error)
+        })
     const arrayFiterUser = users.filter(user => user.id !== id )
-setUsers(arrayFiterUser)
+    setUsers(arrayFiterUser)
 }
+
+// useEffect(()=>{
+//     deleteUser()
+// },[])
 
 //---Editar usuarios---//
 const [editing, setEditing] = useState(false);
