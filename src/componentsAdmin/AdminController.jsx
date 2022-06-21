@@ -27,9 +27,7 @@ const userInfo = () =>{
                 console.log('soy el error ', error)
             })   
         }
-        
-        
-        
+         
         const addUser = (user) => {
             createUser(user)
             .then((response)=>{
@@ -43,8 +41,7 @@ const userInfo = () =>{
             user
         ])
     }
-    
-    
+        
     //---Eliminar usuarios---//
     const deleteUser = (id, users) =>{
         console.log('soy id y users',id, users)
