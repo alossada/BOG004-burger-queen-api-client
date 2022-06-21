@@ -6,14 +6,17 @@ import image from '../assets/logo.png'
 import { login, saveUser } from "../Providers/UserPetitions"
 
 const LoginForm = () => {
-  
-  const navigate = useNavigate();
-  //--- Funcion para cambio de ruta---//
-  const navigateTo = (role) => {
-    return navigate(`/${Object.keys(role)}`);
-  }
 
-  const [userError, setUserError] = useState('');
+//--- se guarda funcion UseNavigate en constante para navegar a la vista indicada---//
+const navigate = useNavigate();
+
+//--- Funcion para cambio de ruta---//
+const navigateTo = (role) => {
+  return navigate(`/${Object.keys(role)}`);
+}
+
+//--- Variable de estado para error de formulario---//
+const [userError, setUserError] = useState('');
   
   return (
     <>
@@ -25,7 +28,7 @@ const LoginForm = () => {
             password: '',
           }}
           validate={(valores) => {
-            let errores = {}; //Array objetos para imprimir los errors
+            let errores = {}; //Array objetos para imprimir los errores
             //-------- validación para el correo -------- 👇
             if (!valores.email) {
               errores.email = 'Por favor ingresa un email'
@@ -44,7 +47,7 @@ const LoginForm = () => {
           }}
           onSubmit={(valores, { resetForm }) => {            
             let data = { email: valores.email, password: valores.password };
-            login(data)
+            login(data) //---Se resuelve peticion de login---//
               .then((response) => {
                 saveUser(response.data);                
                 const activeUser = JSON.parse(sessionStorage.user);
