@@ -1,9 +1,10 @@
 import React from 'react'
-import ProductsMenu from './Products'
+import ProductsMenu from './ProductsMenus'
 import SummaryProduct from './SummaryProduct'
 import Style from '../styles/waiter.module.css'
 import { CartProvider } from 'react-use-cart'
 
+//--Componente que contienen el menu y la orden--//
 export default function Order() {
   return (
     <>

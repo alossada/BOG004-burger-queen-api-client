@@ -1,11 +1,13 @@
 import React from 'react'
 import Style from '../styles/waiter.module.css'
-import { useCart } from 'react-use-cart'
+import { useCart } from 'react-use-cart' //---Hook externo para manejo del estado del carro de compras---//
 import { useState } from 'react'
 import { getToken } from '../Providers/UserPetitions'
 import { ordenPetition } from '../Providers/OrderPetitions'
 
 export default function SummaryProducts() {
+  
+  //---Metodos de useCart---//
   const {
     totalUniqueItems,
     items,
@@ -18,7 +20,7 @@ export default function SummaryProducts() {
 
   const [clients, setClients] = useState('');
 
-  //--- Funcion para creear nueva estrututa de objeto---//
+  //--- Funcion para creear nueva estrutura de objeto---//
   const creatObject =()=>{
     let total = localStorage.getItem('react-use-cart');
     let arrayItems = [];
@@ -44,7 +46,7 @@ export default function SummaryProducts() {
     return arrayItems;
   }
   
-  //--- Funcion para resolver peticion y crear orden
+  //--- Funcion para resolver peticion y crear orden---//
     const createOrder =() =>{
     const token = getToken();  
     const newObject = creatObject();
@@ -58,6 +60,7 @@ export default function SummaryProducts() {
       });
     emptyCart();
     
+    //--- cambio de estado que limpia el input nombre cliente ---//    
     const input = document.getElementById('orderClient');
     const e = {
       target: input
