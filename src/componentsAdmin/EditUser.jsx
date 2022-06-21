@@ -4,7 +4,7 @@ import { editUser } from '../Providers/UserPetitions';
 import Style from '../styles/admin.module.css'
 
 export default function EditUser(props) {
-  console.log('PROPS DESDE EDIT',props.currentUser)
+  // console.log('PROPS DESDE EDIT', props.currentUser)
 
   const {register, handleSubmit, formState: { errors }, setValue} = useForm({
     defaultValues:props.currentUser
@@ -18,6 +18,7 @@ export default function EditUser(props) {
     data.rol = {
       [data.rol]:true
     }
+    console.log(data);
     editUser(data.id, data)
     .then((response)=>{
       return response
