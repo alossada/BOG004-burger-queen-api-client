@@ -28,43 +28,47 @@ const userInfo = () =>{
             })   
         }
         
-useEffect(()=> {
-    userInfo()
-}, [])       
-
-
-const addUser = (user) => {
-    createUser(user)
-        .then((response)=>{
-            console.log('que responde addUser',response)
-        })
-        .catch((error)=>{
+        
+        
+        const addUser = (user) => {
+            createUser(user)
+            .then((response)=>{
+                console.log('que responde addUser',response)
+            })
+            .catch((error)=>{
             console.log(error)
         })
         setUsers([
             ...users,
             user
         ])
-}
-
-
-//---Eliminar usuarios---//
-const deleteUser = (id, users) =>{
-    console.log('soy id y users',id, users)
-    userDelete(id, users)
+    }
+    
+    
+    //---Eliminar usuarios---//
+    const deleteUser = (id, users) =>{
+        console.log('soy id y users',id, users)
+        userDelete(id, users)
         .then((response)=>{
             console.log('soy DELETE', response)
         })
         .catch((error)=>{
             console.log(error)
         })
-    const arrayFiterUser = users.filter(user => user.id !== id )
-    setUsers(arrayFiterUser)
-}
-
-// useEffect(()=>{
-//     deleteUser()
-// },[])
+        const arrayFiterUser = users.filter(user => user.id !== id )
+        setUsers(arrayFiterUser)
+    }
+    
+    useEffect(()=> {
+        userInfo()
+    }, []);  
+    
+    useEffect(()=>{
+        const interval = setInterval(()=>{
+            userInfo()
+        },9000)
+        return () => clearInterval(interval)
+    },[]);
 
 //---Editar usuarios---//
 const [editing, setEditing] = useState(false);
