@@ -9,7 +9,7 @@ const products = (token) => {
         url:url+'products', 
         headers: {
             'content-type': 'application/json',
-            authorization: 'Bearer ' + token,
+            authorization: 'Bearer ' + token.accessToken,
             },
     })
 } 
