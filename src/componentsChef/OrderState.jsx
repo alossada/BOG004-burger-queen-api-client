@@ -2,7 +2,7 @@ import React from 'react'
 import Items from './Items'
 import Style from '../styles/chef.module.css'
 
-export default function OrderState({totalOrders}) {
+export default function OrderState({totalOrders,totalTime}) {
 
 return (
     <div>
@@ -10,6 +10,7 @@ return (
             <div className={Style.nameDate}>
                 <p>{totalOrders.client}</p>
                 <p>{totalOrders.dateProcessed}</p>
+                <p>Duración: {totalTime} min</p>
             </div>
             <h5>Pedido:</h5>
             <Items 
