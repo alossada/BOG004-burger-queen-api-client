@@ -44,13 +44,12 @@ export default function SummaryReadyOrders() {
             Math.abs(new Date(orders.dateProcessed) - new Date(orders.dateEntry)) /
               (1000 * 60)
           );
-          console.log('TOTALTIME:', totalTime)
         return(
           <div  key={index}>
-            <p>{totalTime} Minutos</p>
             <OrderState
-              totalOrders = {orders} 
-            />
+              totalOrders = {orders}
+              totalTime = {totalTime} 
+              />
           </div>
         )
       })}
