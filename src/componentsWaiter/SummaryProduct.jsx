@@ -128,7 +128,7 @@ export default function SummaryProducts() {
               </div>
               <div>
                 <button type= 'submit'
-                style={{background:'#28a745'}}
+                className={Style.button_sendOrder}
                 onClick={() => createOrder()}  
                 >Enviar Pedido</button>
               </div>
