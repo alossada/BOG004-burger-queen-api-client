@@ -8,7 +8,7 @@ import Style from '../styles/waiter.module.css'
 export default function ProductsMenus() {
 
   //---Variable de estado para productos seleccionados---//
-const [FilterProducts, setFilterProducts] =useState([]);
+const [filterProducts, setFilterProducts] =useState([]);
 
 //---Funcion para obtener 
 const token = getToken();
@@ -24,7 +24,7 @@ useEffect(()=>{
   //--Retorna el menu componente menu con sus elementos---// 
   return (
     <div className={Style.allProducts}>
-      {FilterProducts.map((products, index) => {
+      {filterProducts.map((products, index) => {
         return(
           <div key={index} className='containerList'>
             <Menu
