@@ -1,70 +1,89 @@
-# Getting Started with Create React App
+<div align="center">
+  <h1> Burger Queen Api Client </h1>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+  ![Burger Queen Logo](./src/assets/logo.png)
 
-## Available Scripts
+</div>
 
-In the project directory, you can run:
+## Contents
 
-### `npm start`
+* [1. Descripción del Producto](#1-Descripción-del-Producto)
+* [2. Herramientas](#2-Herramientas)
+* [3. User stories](#3-user-stories)
+* [4. High fidelity prototypes](#4-high-fidelity-prototypes)
+* [5. Deployed project](#6-deployed-project)
+* [6. Authors](#7-authors)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## 1. Descripción del Producto
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Este proyecto es una *single page application* hecha con *React* para unn restaurante de hamburguesas llamado Burger Queen. Nuestra aplicación permite la gestión de las operaciones del restaurante en función de los roles de cada empleado, ayudándole a realizar sus tareas asignadas. 
 
-### `npm test`
+Roles:
+ 
+* **Administrador:** Persona a cargo de mantener llevar el registo de los empleados, puede crear usuarios, editarlos y eliminarlos. 
+* **Mesero:** Puede tomar y crear ordenes, editarlas y enviarlas al modulo de chef para iniciar su preparación, además el mesero tiene acceso a el set de ordenes ya listas para entregar a la mesa y al historial de ordenes entregadas. 
+* **Chef:** Las personas de la cocina pueden ver la lista de ordenes enviadas por el mesero que necesitan ser preparadas, puede marcarlas como listas y puede ver el tiempo que tomo prepararlas.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Nuestra aplicación fue diseñada para ser usada en tablet. 
 
-### `npm run build`
+## 2. Herramientas
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+<div align="center">
+<a title="ReactJs" href="https://es.reactjs.org/"><img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB"></a>
+<a title="ReactRouter" href="https://es.reactjs.org/"><img src="https://img.shields.io/badge/React_Router-CA4245?style=for-the-badge&logo=react-router&logoColor=white"></a>
+<a title="JavaScript" href="https://developer.mozilla.org/es/docs/Web/JavaScript"><img src="https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E"></a>
+<a title="CSS" href="https://developer.mozilla.org/es/docs/Web/CSS"><img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white"></a>
+<a title="Jest" href="https://jestjs.io/"><img src="https://img.shields.io/badge/Jest-C21325?style=for-the-badge&logo=jest&logoColor=white"></a>
+<a title="Eslint" href="https://eslint.org/"><img src="https://img.shields.io/badge/eslint-3A33D1?style=for-the-badge&logo=eslint&logoColor=white"></a>
+<a title="Figma" href="https://www.figma.com/file/9Lkk5oAp6M3n7qUvPnAPDb/Burger-Queen?node-id=0%3A1/"><img src="https://img.shields.io/badge/Figma-F24E1E?style=for-the-badge&logo=figma&logoColor=white"></a>
+</div>
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## 3. Historias de Usuario
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- HU 1: Yo como meser@ quiero tomar el pedido de un cliente para evitar errores y poder enviar la orden correctamente a cocina, y así la puedan ir preparando en orden.
+- HU 2: Yo como meser@ quiero ver tanto los precios individuales de cada producto, como el total según se vayan agregando para saber cuánto cobrar.
+- HU 3: Yo como jefe de cocina quiero ver los pedidos de los clientes en orden para saber que se debe cocinar, y marcar cuales están listos para que el meser@ pase a recogerlos y pueda servirlo al cliente.
+- HU 4: Yo como meser@ quiero ver los pedidos que están preparados y listos para entregarlos rápidamente a los clientes.
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## 4. Prototipos 
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Teniendo las historias de usuario en mente, creamos los prototipos de alta fidelidad con el deseo de entender las necesidades del usuario y proveer un flujo de trabajo optimo. Estos prototipos fueron claves para el desarrollo del proyecto.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## 5. Deployed project
 
-## Learn More
+Link to the deploy project: 
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Credeciales:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Correos:
 
-### Code Splitting
+- waiter@burger.com
+- chef@burger.com
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+- Password: 123456 
 
-### Analyzing the Bundle Size
+(#7-authors) to get the authorized credentials.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+### 6.1 Log in 
 
-### Making a Progressive Web App
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
 
-### Advanced Configuration
+### 6.2 Waiter screens
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
 
-### Deployment
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+### 6.3 Chef screens
 
-### `npm run build` fails to minify
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### 6.4 Administrador screens
+
+
+
+## 7. Authors
+
+| Developers | Contact |
+| ------------- | ------------- |
+| Lina Marcela Villa Ramirez | [![LinkedIn](https://img.shields.io/badge/linkedin-%230077B5.svg?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/lina-marcela-villa/) [![GitHub](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Lina-1985-cloud) |
+| Angélica Losada| [![LinkedIn](https://img.shields.io/badge/linkedin-%230077B5.svg?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/alossada/) [![GitHub](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white)](https://github.com/alossada) |
