@@ -71,6 +71,11 @@
 	font-size: 16px;
 	transition: .3s ease all;
 }
+.LoginForm button:hover{
+	background-color: transparent;
+    border: 2px solid #FE8D06;
+	color: #f1f1f1;
+}
 .LoginForm .exito {
 	text-align: center;
 	font-size: 14px;
