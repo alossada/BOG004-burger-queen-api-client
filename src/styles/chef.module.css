@@ -72,6 +72,11 @@ h5{
     padding: 3px 20px 3px 20px;
     border-radius: 20px;
 }
+.btnListo:hover{
+    background-color: transparent;
+    border: 2px solid #FE8D06;
+	color: #f1f1f1;
+}
 
 /* Media queries para tablet */
 
