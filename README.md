@@ -11,8 +11,8 @@
 * [2. Herramientas](#2-Herramientas)
 * [3. User stories](#3-user-stories)
 * [4. High fidelity prototypes](#4-high-fidelity-prototypes)
-* [5. Deployed project](#6-deployed-project)
-* [6. Authors](#7-authors)
+* [5. Deployed project](#5-deployed-project)
+* [6. Authors](#6-authors)
 
 ## 1. Descripción del Producto
 
@@ -52,14 +52,18 @@ Nuestra aplicación fue diseñada para ser usada en tablet.
 
 Teniendo las historias de usuario en mente, creamos los prototipos de alta fidelidad con el deseo de entender las necesidades del usuario y proveer un flujo de trabajo optimo. Estos prototipos fueron claves para el desarrollo del proyecto.
 
+
 ### 4.1 Homepage y Login 
 
 ![Prototype Homepage](./src/assets/protoypeHomepage.png) ![Prototype Login](./src/assets/protoypeLogin.png)
 
+
 ### 4.2 Mesero
 
-![Prototype Waiter Screen](./src/assets/protoypeWaiterNewOrder.png) ![Prototype Waiter Screen](./src/assets/protoypeOrders.png)
-![Prototype Waiter Screen](./src/assets/)
+![Prototype Waiter 1](./src/assets/protoypeWaiterNewOrder.png) ![Prototype Waiter 2](./src/assets/protoypeOrders.png)
+
+![Prototype Waiter 3](./src/assets/)
+
 
 ### 4.1 chef
 
@@ -78,29 +82,37 @@ Credeciales:
 
 (#7-authors) to get the authorized credentials.
 
-### 6.1 Homepage 
+
+### 5.1 Homepage 
 
 ![Homepage](./src/assets/homepage.png)
 
-### 6.2 Log in 
+
+### 5.2 Log in 
 
 ![Login](./src/assets/login.png) ![Waiter Login](./src/assets/LoginWaiter.png) ![Chef Login](./src/assets/loginChef.png)
 
-### 6.3 Waiter 
+
+### 5.3 Waiter 
 
 ![Waiter new order](./src/assets/WaiterNewOrder.png) ![Waiter order](./src/assets/waiterOrder.png)
 
 ![Waiter Ready Orders](./src/assets/waiterReady.png) ![Waiter Delivered](./src/assets/waiterDelivered.png)
 
-### 6.4 Chef 
+
+### 5.4 Chef 
 
 ![Chef Cooking](./src/assets/chefCooking.png) ![Chef Prepared](./src/assets/ChefPrepared.png)
 
-### 6.5 Administrador
+
+### 5.5 Administrador
+
+![Administrador](./src/assets/admin.png) 
+
+![Admin editar](./src/assets/adminEdit.png)
 
 
-
-## 7. Authors
+## 6. Authors
 
 | Developers | Contact |
 | ------------- | ------------- |
