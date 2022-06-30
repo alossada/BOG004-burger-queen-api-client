@@ -1,7 +1,7 @@
 <div align="center">
   <h1> Burger Queen Api Client </h1>
 
-  ![Burger Queen Logo](./src/assets/logo.png)
+  ![Burger Queen Logo](./src/assets/logoReadme.png)
 
 </div>
 
@@ -28,6 +28,7 @@ Nuestra aplicación fue diseñada para ser usada en tablet.
 
 ## 2. Herramientas
 
+
 <div align="center">
 <a title="ReactJs" href="https://es.reactjs.org/"><img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB"></a>
 <a title="ReactRouter" href="https://es.reactjs.org/"><img src="https://img.shields.io/badge/React_Router-CA4245?style=for-the-badge&logo=react-router&logoColor=white"></a>
@@ -37,6 +38,7 @@ Nuestra aplicación fue diseñada para ser usada en tablet.
 <a title="Eslint" href="https://eslint.org/"><img src="https://img.shields.io/badge/eslint-3A33D1?style=for-the-badge&logo=eslint&logoColor=white"></a>
 <a title="Figma" href="https://www.figma.com/file/9Lkk5oAp6M3n7qUvPnAPDb/Burger-Queen?node-id=0%3A1/"><img src="https://img.shields.io/badge/Figma-F24E1E?style=for-the-badge&logo=figma&logoColor=white"></a>
 </div>
+
 
 ## 3. Historias de Usuario
 
@@ -50,34 +52,51 @@ Nuestra aplicación fue diseñada para ser usada en tablet.
 
 Teniendo las historias de usuario en mente, creamos los prototipos de alta fidelidad con el deseo de entender las necesidades del usuario y proveer un flujo de trabajo optimo. Estos prototipos fueron claves para el desarrollo del proyecto.
 
+### 4.1 Homepage y Login 
+
+![Prototype Homepage](./src/assets/protoypeHomepage.png) ![Prototype Login](./src/assets/protoypeLogin.png)
+
+### 4.2 Mesero
+
+![Prototype Waiter Screen](./src/assets/protoypeWaiterNewOrder.png) ![Prototype Waiter Screen](./src/assets/protoypeOrders.png)
+![Prototype Waiter Screen](./src/assets/)
+
+### 4.1 chef
+
+![Prototype Chef Screen](./src/assets/protoypeCookingPrepared.png)
+
 
 ## 5. Deployed project
 
-Link to the deploy project: 
+Link:  
 
 Credeciales:
+* waiter@burger.com
+* chef@burger.com
 
-Correos:
-
-- waiter@burger.com
-- chef@burger.com
-
-- Password: 123456 
+* Password: 123456 
 
 (#7-authors) to get the authorized credentials.
 
-### 6.1 Log in 
+### 6.1 Homepage 
 
+![Homepage](./src/assets/homepage.png)
 
+### 6.2 Log in 
 
-### 6.2 Waiter screens
+![Login](./src/assets/login.png) ![Waiter Login](./src/assets/LoginWaiter.png) ![Chef Login](./src/assets/loginChef.png)
 
+### 6.3 Waiter 
 
+![Waiter new order](./src/assets/WaiterNewOrder.png) ![Waiter order](./src/assets/waiterOrder.png)
 
-### 6.3 Chef screens
+![Waiter Ready Orders](./src/assets/waiterReady.png) ![Waiter Delivered](./src/assets/waiterDelivered.png)
 
+### 6.4 Chef 
 
-### 6.4 Administrador screens
+![Chef Cooking](./src/assets/chefCooking.png) ![Chef Prepared](./src/assets/ChefPrepared.png)
+
+### 6.5 Administrador
 
 
 
