@@ -62,7 +62,7 @@ Teniendo las historias de usuario en mente, creamos los prototipos de alta fidel
 
 ![Prototype Waiter 1](./src/assets/protoypeWaiterNewOrder.png) ![Prototype Waiter 2](./src/assets/protoypeOrders.png)
 
-![Prototype Waiter 3](./src/assets/)
+![Prototype Waiter 3](./src/assets/waiterReady.png)
 
 
 ### 4.1 chef
