@@ -1,0 +1,99 @@
+h5{
+    text-align: left;
+    padding: 0px 8px 0 8px;
+}
+.containerHeader{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
+.logo{
+    width: 100px;
+}
+.iconLogout{
+    font-size: 2.5rem;
+}
+.container_chef{
+    background-image: url('../../public/bg.jpg');
+	background-size: cover;
+	min-height: 100vh;
+    color: #f1f1f1;
+}
+.containerCards{
+    width: 100%;
+    margin: 0 auto;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr ;
+    text-align: center;
+    gap: 10px;
+}
+.containerOrders{
+    width: 90%;
+    border-radius: 20px;
+    background-color: #1b1c1bbb;
+    /* text-align: center; */
+    padding: 5px;
+}
+.containerProducts{
+    display: flex;
+    gap: 4px;
+    color: #f1f1f1;
+}
+.containerDelivered{
+    border:  solid 1px #FE8D06;
+    width: 90%;
+    margin: 0 auto;
+}
+.containerDelivered th{
+    text-align: center;
+    border: 1px solid #FE8D06 ;
+}
+.delivered_head{
+    background-color: #FFE566;
+    color: #070707;
+    font-weight: 700;
+    font-size: 1.2rem;
+}
+.nameDate{
+    background-color: #FFE566;
+    margin-bottom: 10px;
+    color: #070707;
+    font-weight: 700;
+    padding: 5px 2px 5px 2px;
+    border-radius: 20px;
+}
+.btnListo{
+    background-color: #fe8e06d3;
+    color: #070707;
+    font-weight: 700;
+    margin: 15px;
+    padding: 3px 20px 3px 20px;
+    border-radius: 20px;
+}
+.btnListo:hover{
+    background-color: transparent;
+    border: 2px solid #FE8D06;
+	color: #f1f1f1;
+}
+
+/* Media queries para tablet */
+
+@media (min-width: 768px){
+    .logo{
+        width: 120px;
+    }
+    .iconLogout{
+        font-size: 3rem;
+    }
+    .containerCards{
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+    .containerOrders{
+        font-size: 1.2rem;
+    }
+    .containerProducts{
+        gap: 10px;
+    }
+}
