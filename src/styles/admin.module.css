@@ -33,8 +33,7 @@
   margin-top: 20px;
 }
 .button_editar{
-  border: 2px solid #FE8D06;
-  background-color: transparent;
+  background-color: rgb(211, 62, 16);
 }
 .button_editar_send{
   background-color: #FE8D06;
@@ -44,8 +43,9 @@
   font-weight: 700;
 }
 .button_eliminar{
-  background-color: rgb(211, 62, 16);
-  /* color: #070707; */
+  border: 2px solid #FE8D06;
+  background-color: transparent;
+
   margin-left: 10px;
 }
 .button_editar:hover,

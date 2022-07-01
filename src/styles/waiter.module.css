@@ -1,6 +1,11 @@
 td img{
     margin: 0 auto;
 }
+button:focus{
+    outline: none;
+    background-color: #dfe;
+    border: 0;
+}
 .iconLogout{
     font-size: 2rem;
 }
@@ -47,16 +52,26 @@ td img{
     padding: 5px 10px;
     margin-right: 10px;
 }
+.button_plus:hover{
+    background-color: transparent;
+    border:2px solid #FE8D06;
+}
 .button_rest{
     background-color: transparent;
     border:2px solid #FE8D06;
     margin-right: 10px;
     padding: 5px 10px;
 }
+.button_rest:hover{
+    background-color: #FFE566;
+}
 .button_remove{
     background-color: rgb(254, 141, 6);
-    padding: 5px 10px;
-    
+    padding: 5px 10px; 
+}
+.button_remove:hover{
+    background-color: #FFE566;
+    padding: 5px 10px; 
 }
 .button_cancelOrder{
     background-color: rgb(254, 141, 6);
