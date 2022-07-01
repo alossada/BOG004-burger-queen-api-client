@@ -80,8 +80,6 @@ Credeciales:
 
 * Password: 123456 
 
-(#7-authors) to get the authorized credentials.
-
 
 ### 5.1 Homepage 
 
