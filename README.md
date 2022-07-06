@@ -20,7 +20,7 @@ Este proyecto es una *single page application* hecha con *React* para unn restau
 
 Roles:
  
-* **Administrador:** Persona a cargo de mantener llevar el registo de los empleados, puede crear usuarios, editarlos y eliminarlos. 
+* **Administrador:** Persona a cargo de mantener y llevar el registo de los empleados, puede crear usuarios, editarlos y eliminarlos. 
 * **Mesero:** Puede tomar y crear ordenes, editarlas y enviarlas al modulo de chef para iniciar su preparación, además el mesero tiene acceso a el set de ordenes ya listas para entregar a la mesa y al historial de ordenes entregadas. 
 * **Chef:** Las personas de la cocina pueden ver la lista de ordenes enviadas por el mesero que necesitan ser preparadas, puede marcarlas como listas y puede ver el tiempo que tomo prepararlas.
 
@@ -42,11 +42,11 @@ Nuestra aplicación fue diseñada para ser usada en tablet.
 
 ## 3. Historias de Usuario
 
-- HU 1: Yo como meser@ quiero tomar el pedido de un cliente para evitar errores y poder enviar la orden correctamente a cocina, y así la puedan ir preparando en orden.
-- HU 2: Yo como meser@ quiero ver tanto los precios individuales de cada producto, como el total según se vayan agregando para saber cuánto cobrar.
-- HU 3: Yo como jefe de cocina quiero ver los pedidos de los clientes en orden para saber que se debe cocinar, y marcar cuales están listos para que el meser@ pase a recogerlos y pueda servirlo al cliente.
-- HU 4: Yo como meser@ quiero ver los pedidos que están preparados y listos para entregarlos rápidamente a los clientes.
-
+HU 1: Mesero(a) debe poder ingresar al sistema, si el administrador ya le ha asignado credenciales. "Yo como mesero(a) quiero poder ingresar al sistema de pedidos."
+HU 2: Mesero(a) debe poder tomar pedido de cliente. "Yo como mesero(a) quiero tomar el pedido de un cliente para no depender de mi mala memoria, para saber cuánto cobrar, y enviarlo a la cocina para evitar errores y que se puedan ir preparando en orden."
+HU 3: Jefe de cocina debe ver los pedidos. "Yo como jefe(a) de cocina quiero ver los pedidos de los clientes en orden y marcar cuáles están listos para saber qué se debe cocinar y avisar a los meseros que un pedido está listo para servirlo a un cliente."
+HU 4: Mesero(a) debe ver pedidos listos para servir. "Yo como mesero(a) quiero ver los pedidos que están preparados para entregarlos rápidamente a los clientes que las hicieron."
+HU 5: Administrador(a) de tienda debe administrar a sus trabajadores. "Yo como administrador(a) de tienda quiero gestionar a los usuarios de la plataforma para mantener actualizado la información de mis trabajadores."
 
 ## 4. Prototipos 
 
