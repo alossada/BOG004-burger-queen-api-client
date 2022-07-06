@@ -16,7 +16,7 @@
 
 ## 1. Descripción del Producto
 
-Este proyecto es una *single page application* hecha con *React* para unn restaurante de hamburguesas llamado Burger Queen. Nuestra aplicación permite la gestión de las operaciones del restaurante en función de los roles de cada empleado, ayudándole a realizar sus tareas asignadas. 
+Este proyecto es una *single page application* hecha con *React* para un restaurante de hamburguesas llamado Burger Queen. Nuestra aplicación permite la gestión de las operaciones del restaurante en función de los roles de cada empleado, ayudándole a realizar sus tareas asignadas. 
 
 Roles:
  
