@@ -72,7 +72,7 @@ Teniendo las historias de usuario en mente, creamos los prototipos de alta fidel
 
 ## 5. Deployed project
 
-Link:  
+Link:  https://burger-queen-api-alossada.herokuapp.com/
 
 Credeciales:
 * waiter@burger.com
